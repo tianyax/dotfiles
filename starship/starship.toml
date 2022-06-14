@@ -1,0 +1,38 @@
+# 不用在提示符的开始换行
+add_newline = false
+
+# prompt_order=["rust", "line_break", "package", "line_break", "character"]
+
+# 将提示符标志由“❯”换成“➜”
+[character]  # 正在配置的组件名称是“character”
+# symbol = "➜"     # “symbol”字段被设置为 "➜"
+# symbol = "💥 "
+# symbol = "💧 "
+symbol = "✨ "
+# style = "bold blue"
+
+# 禁用 package 组件，它不会在提示符中被显示出来
+[package]
+# disabled = false
+# format = "via [🎁 $version](208 bold) "
+# symbol = "🎁 "
+symbol = "💭 "
+
+[python]
+symbol = "🎉 "
+
+[custom]
+
+[custom.tab]
+description = "The current tab in the tab terminal multiplexer"
+command = "tab --starship"
+when = "tab --starship"
+shell = ["sh"]
+format = "[$output]($style) "
+style = "bold blue"
+# symbol = "🔺 "
+
+#[battery]
+#full_symbol = "🔋"
+#charging_symbol = "⚡️"
+#discharging_symbol = "💀"

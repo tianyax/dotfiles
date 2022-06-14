@@ -1,0 +1,41 @@
+[credential]
+	helper = store
+[user]
+	email = 
+	name = 
+[core]
+	excludesfile = $HOME/.gitignore_global
+	pager = delta
+[interactive]
+    diffFilter = delta --color-only
+[delta]
+	features = side-by-side line-numbers decorations
+	whitespace-error-style = 22 reverse
+	#side-by-side = false
+	plus-color = "#012800"
+	minus-color = "#340001"
+	plus-style = "syntax #012800"
+	syntax-theme = Dracula
+	#minus-style = red bold ul "#ffeeee"
+	line-numbers = false
+	navigate = true
+	#line-numbers-left-format = ""
+	#line-numbers-right-format = "│ "
+	file-modified-label = "💥 "
+[delta "decorations"]
+	commit-decoration-style = purple box
+	#commit-style = magenta
+	file-style = bold yellow ul
+	file-decoration-style = cyan ul
+	hunk-header-decoration-style = purple box
+[pager]
+	diff = delta
+	log = delta
+	reflog = delta
+	show = delta
+[http]
+	sslVerify = true
+[merge]
+    conflictstyle = diff3
+[diff]
+    colorMoved = default

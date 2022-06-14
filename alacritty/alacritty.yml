@@ -1,0 +1,85 @@
+
+window:
+    decorations: "transparent"
+    opacity: 0.8
+    dimensions:
+      columns: 120
+      lines: 30
+#    dynamic_padding: true
+    # Startup Mode (changes require restart)
+    #
+    # Values for `startup_mode`:
+    #   - Windowed
+    #   - Maximized
+    #   - Fullscreen
+    #
+    # Values for `startup_mode` (macOS only):
+    #   - SimpleFullscreen
+    startup_mode: Maximized
+
+env:
+  TERM: xterm-256color
+
+live_config_reload: true
+
+font:
+  size: 18.5
+  normal:
+    family: FuraCode Nerd Font
+    #family: JetBrainsMono Nerd Font
+    #family: Monaco
+    #family: Droid Sans Mono for Powerline
+    #style: Regular
+    style: Light
+  use_thin_strokes: true
+
+  draw_bold_text_with_bright_colors: false
+
+import:
+  - ./dracula.yml
+
+    #colors:
+    #  #Default colors
+    #  transparent_background_colors: true
+    #  primary:
+    #    background: '0x1e282d'
+    #  # Normal colors
+    #  normal:
+    #    black:   '0x666666'
+    #    red:     '0xeb606b'
+    #    green:   '0xc3e88d'
+    #    yellow:  '0xf7eb95'
+    #    blue:    '0x80cbc4'
+    #    magenta: '0xff2f90'
+    #    cyan:    '0xaeddff'
+    #    white:   '0xffffff'
+    #  
+    #  # Bright colors
+    #  bright:
+    #    black:   '0xff262b'
+    #    red:     '0xeb606b'
+    #    green:   '0xc3e88d'
+    #    yellow:  '0xf7eb95'
+    #    blue:    '0x7dc6bf'
+    #    magenta: '0x6c71c4'
+    #    cyan:    '0x35434d'
+    #    white:   '0xffffff'
+    #
+    #  indexed_colors:
+    #    - { index: 16, color: '#282c34' }
+    #    - { index: 17, color: '#3e4452' }
+    #    - { index: 59, color: '#4b5263' }
+    #    - { index: 60, color: '#636d83' }
+    #    - { index: 69, color: '#528bff' }
+    #    - { index: 73, color: '#57b7c2' }
+    #    - { index: 75, color: '#61afef' }
+    #    - { index: 81, color: '#80a0ff' }
+    #    - { index: 102, color: '#828997' }
+    #    - { index: 114, color: '#98c379' }
+    #    - { index: 130, color: '#be5046' }
+    #    - { index: 145, color: '#abb2bf' }
+    #    - { index: 168, color: '#e06c75' }
+    #    - { index: 173, color: '#d19a66' }
+    #    - { index: 176, color: '#c678dd' }
+    #    - { index: 180, color: '#e5c07b' }
+    #    - { index: 233, color: '#181a1f' }

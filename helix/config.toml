@@ -1,0 +1,11 @@
+theme = "bogster"
+
+[editor]
+auto-completion = true
+true-color = true
+
+[editor.lsp]
+display-messages = true
+
+[editor.file-picker]
+hidden = false
