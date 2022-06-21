@@ -5,8 +5,8 @@ local M = {}
 M.mappings = require "custom.mappings"
 
 M.ui = {
-   theme_toggle = { "everforest, doomchad" },
-   theme = "gruvchad",
+   theme_toggle = { "everforest,  everforest_light" },
+   theme = "doomchad",
    italic_comments = true,
    transparency = true,
 }
@@ -79,6 +79,7 @@ M.options = {
       vim.opt.shiftwidth = 4
       vim.opt.smartindent = true
       vim.opt.tabstop = 4
+      vim.opt.mouse = "v"
    end,
 }
 

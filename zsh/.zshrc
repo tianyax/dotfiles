@@ -25,21 +25,23 @@ alias cat='bat -p'
 alias curl='curlie'
 alias gu='gitui'
 alias tx='tmux'
+alias vir='vi -R'
 alias ra='ranger'
 alias pe='poetry'
-alias v='~/apps/vlang/v'
+alias v='$HOME/apps/vlang/v'
 alias kl=kubectl
 alias ss='mcfly search'
 alias zj='zellij'
-
+#alias ssh="kitty +kitten ssh"
+#alias delta='~/apps/delta/delta'
+#alias lzd='lazydocker'
+#alias ping='prettyping'
 export BAT_THEME="TwoDark"
 export EDITOR=/usr/local/bin/nvim
-export PATH="~/.pyenv/bin:$PATH"
-export PATH="~/.local/bin/:$PATH"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -f ~/.forgit/forgit.plugin.zsh ] && source ~/.forgit/forgit.plugin.zsh
-#eval "$(starship init zsh)"
+eval "$(starship init zsh)"
 export FZF_DEFAULT_OPTS="--height 50% --info inline --border --preview 'bat --style=numbers --color=always --line-range :5000 {}'"
 export FZF_CTRL_T_COMMAND='fd --type f'
 #export FORGIT_FZF_DEFAULT_OPTS="--exact --border --cycle --reverse --height '80%'"
@@ -52,14 +54,18 @@ eval "$(pyenv init -)"
 eval "$(zoxide init zsh --cmd c)"
 
 # mcfly config
-eval "$(mcfly init zsh)"
-if [[ "$(defaults read -g AppleInterfaceStyle 2&>/dev/null)" != "Dark" ]]; then
-    export MCFLY_LIGHT=TRUE
-fi
-export MCFLY_KEY_SCHEME=vim
-export MCFLY_FUZZY=1  # support 1~5
-export MCFLY_RESULTS=15
-export MCFLY_DISABLE_MENU=truecolor
+#eval "$(mcfly init zsh)"
+#if [[ "$(defaults read -g AppleInterfaceStyle 2&>/dev/null)" != "Dark" ]]; then
+#    export MCFLY_LIGHT=TRUE
+#fi
+#export MCFLY_KEY_SCHEME=vim
+#export MCFLY_FUZZY=1  # support 1~5
+#export MCFLY_RESULTS=15
+#export MCFLY_DISABLE_MENU=truecolor
+
+# atuin config                                                                                                                                                      
+#atuin import zsh  -- import zsh history         
+eval "$(atuin init zsh)"                                                                                                                                           
 
 # ture color support
 [[ $TMUX = "" ]] && export TERM="xterm-256color"
@@ -85,6 +91,8 @@ zi ice depth=1; zi light romkatv/powerlevel10k
 zi light denysdovhan/spaceship-prompt
 zi light zsh-users/zsh-autosuggestions
 zi light Aloxaf/fzf-tab
+zi pack for dircolors-material    
+zi light z-shell/z-a-default-ice
 
 # disable sort when completing options of any command
 zstyle ':completion:complete:*:options' sort false
@@ -131,3 +139,6 @@ zstyle ':fzf-tab:complete:*:*' extra-opts --preview=$extract";$PREVIEW \$in"
 source <(kubectl completion zsh)
 
 source ~/.config/broot/launcher/bash/br
+
+# Created by `pipx` on 2022-06-14 11:56:48
+export PATH="$PATH:$HOME/.local/bin"

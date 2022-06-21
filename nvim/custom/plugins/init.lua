@@ -42,33 +42,23 @@ return {
       config = function()
          require "custom.plugins.leap"
       end,
-
-      setup = function()
-         require("core.utils").packer_lazy_load "leap.nvim"
-      end,
    },
    ["phaazon/hop.nvim"] = {
       config = function()
          require("hop").setup { keys = "etovxqpdygfblzhckisuran" }
       end,
-
-      setup = function()
-         require("core.utils").packer_lazy_load "hop.nvim"
-      end,
    },
 
    -- Code lint and format.
-   ["jose-elias-alvarez/null-ls.nvim"] = {
-      after = "nvim-lspconfig",
-      requires = { "nvim-lua/plenary.nvim" },
-      config = function()
-         require("custom.plugins.null-ls").setup()
-      end,
-
-      setup = function()
-         require("core.utils").packer_lazy_load "null-ls.nvim"
-      end,
-   },
+   --[[
+  ["jose-elias-alvarez/null-ls.nvim"] = {
+    after = "nvim-lspconfig",
+    requires = { "nvim-lua/plenary.nvim" },
+    config = function()
+      require("custom.plugins.null-ls").setup()
+    end,
+  },
+  --]]
 
    -- rust tools
    ["saecki/crates.nvim"] = {
@@ -77,19 +67,12 @@ return {
       config = function()
          require("crates").setup()
       end,
-
-      setup = function()
-         require("core.utils").packer_lazy_load "crates.nvim"
-      end,
    },
 
    ["simrat39/rust-tools.nvim"] = {
+      after = "nvim-lspconfig",
       config = function()
          require("custom.plugins.rust-tools").setup()
-      end,
-
-      setup = function()
-         require("core.utils").packer_lazy_load "rust-tools.nvim"
       end,
    },
 
@@ -97,10 +80,6 @@ return {
       after = "nvim-lspconfig",
       config = function()
          require "custom.plugins.go"
-      end,
-
-      setup = function()
-         require("core.utils").packer_lazy_load "go.nvim"
       end,
    },
 
@@ -118,7 +97,7 @@ return {
    -- treesitter extension
    ["nvim-treesitter/nvim-treesitter-context"] = {
       opt = true,
-      requires = { "nvim-treesitter/nvim-treesitter" },
+      after = { "nvim-treesitter" },
 
       config = function()
          require("treesitter-context").setup()
@@ -126,37 +105,28 @@ return {
    },
 
    ["nvim-telescope/telescope-file-browser.nvim"] = {
-      requires = { "nvim-lua/plenary.nvim" },
-      --after = "nvim-telescope/telescope.nvim",
+      requires = {
+         "nvim-lua/plenary.nvim",
+         "nvim-telescope/telescope-ui-select.nvim",
+      },
+      after = { "plenary.nvim", "telescope.nvim" },
       config = function()
          require("custom.plugins.telescope-extension").setup()
       end,
+   },
 
-      setup = function()
-         require("core.utils").packer_lazy_load "telescope-file-browser.nvim"
-      end,
-   },
-   ["nvim-telescope/telescope-ui-select.nvim"] = {
-      setup = function()
-         require("core.utils").packer_lazy_load "telescope-ui-select.nvim"
-      end,
-   },
+   --[[
    ["nvim-telescope/telescope-fzf-native.nvim"] = {
       run = "make",
-      setup = function()
-         require("core.utils").packer_lazy_load "telescope-fzf-native.nvim"
-      end,
+      after = { "plenary.nvim", "telescope.nvim" },
    },
+   --]]
 
    -- Smooth scrolling
    ["karb94/neoscroll.nvim"] = {
       opt = true,
       config = function()
          require("neoscroll").setup()
-      end,
-
-      setup = function()
-         require("core.utils").packer_lazy_load "neoscroll.nvim"
       end,
    },
 
@@ -168,10 +138,10 @@ return {
 
    -- github issue
    ["pwntester/octo.nvim"] = {
-      requires = {
-         "nvim-lua/plenary.nvim",
-         "nvim-telescope/telescope.nvim",
-         "kyazdani42/nvim-web-devicons",
+      after = {
+         "plenary.nvim",
+         "telescope.nvim",
+         "nvim-web-devicons",
       },
       config = function()
          require "custom.plugins.octo"
@@ -179,47 +149,32 @@ return {
    },
 
    -- git
-   ["jiaoshijie/undotree"] = {
-      setup = function()
-         require("core.utils").packer_lazy_load "undotree"
-      end,
-   },
+   ["jiaoshijie/undotree"] = {},
 
    -- fuzzy finding
    ["is0n/fm-nvim"] = {
       config = function()
          require("custom.plugins.fm-nvim").setup()
       end,
-
-      setup = function()
-         require("core.utils").packer_lazy_load "fm-nvim"
-      end,
    },
 
    -- code refactoring
    ["ThePrimeagen/refactoring.nvim"] = {
-      requires = {
-         { "nvim-lua/plenary.nvim" },
-         { "nvim-treesitter/nvim-treesitter" },
+      after = {
+         "plenary.nvim",
+         "nvim-treesitter",
+         "telescope.nvim",
       },
       config = function()
          require("refactoring").setup {
             require("telescope").load_extension "refactoring",
          }
       end,
-
-      setup = function()
-         require("core.utils").packer_lazy_load "refactoring.nvim"
-      end,
    },
 
    -- pop-up menu
    ["weilbith/nvim-code-action-menu"] = {
       cmd = "CodeActionMenu",
-
-      setup = function()
-         require("core.utils").packer_lazy_load "nvim-code-action-menu"
-      end,
    },
 
    --[[
@@ -239,18 +194,10 @@ return {
          require "custom.plugins.specs"
       end,
       disable = false,
-
-      setup = function()
-         require("core.utils").packer_lazy_load "specs.nvim"
-      end,
    },
 
    -- virtual types using built-in LSP client.
-   ["jubnzv/virtual-types.nvim"] = {
-      setup = function()
-         require("core.utils").packer_lazy_load "virtual-types.nvim"
-      end,
-   },
+   ["jubnzv/virtual-types.nvim"] = {},
 
    --[[
     ["noib3/nvim-compleet"] = {
@@ -266,10 +213,6 @@ return {
       config = function()
          require("zen-mode").setup()
       end,
-
-      setup = function()
-         require("core.utils").packer_lazy_load "zen-mode.nvim"
-      end,
    },
 
    ["folke/twilight.nvim"] = {
@@ -277,10 +220,6 @@ return {
          require "custom.plugins.twilight"
       end,
       cmd = { "Twilight" },
-
-      setup = function()
-         require("core.utils").packer_lazy_load "twilight.nvim"
-      end,
    },
 
    -- theme
@@ -289,10 +228,6 @@ return {
 
       config = function()
          require "custom.plugins.catppuccin"
-      end,
-
-      setup = function()
-         require("core.utils").packer_lazy_load "catppuccin"
       end,
    },
    --["sainnhe/edge"] = {},

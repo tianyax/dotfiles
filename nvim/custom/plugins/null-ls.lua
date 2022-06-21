@@ -7,7 +7,7 @@ local sources = {
    --b.formatting.gofumpt,
    --b.formatting.goimports,
    --b.formatting.golines,
-   b.diagnostics.golangci_lint,
+   --b.diagnostics.golangci_lint,
    --b.diagnostics.revive,
    b.code_actions.refactoring.with { filetypes = { "go", "python" } },
    b.code_actions.gitsigns,

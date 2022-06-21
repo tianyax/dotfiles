@@ -1,6 +1,5 @@
 -- You don't need to set any of these options.
 -- IMPORTANT!: this is only a showcase of how you can set default options!
-
 local M = {}
 
 M.setup = function()
@@ -28,7 +27,8 @@ M.setup = function()
    -- To get ui-select loaded and working with telescope, you need to call
    require("telescope").load_extension "ui-select"
    -- To get fzf loaded and working with telescope, you need to call
-   require("telescope").load_extension "fzf"
+   --require("telescope").load_extension "fzf"
+   require("telescope").load_extension "refactoring"
 end
 
 return M

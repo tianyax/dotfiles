@@ -1,5 +1,16 @@
 local M = {}
 
+M.nvterm = {
+   n = {
+      ["<leader>i"] = {
+         function()
+            require("nvterm.terminal").toggle "float"
+         end,
+         "   new floating term",
+      },
+   },
+}
+
 M.telescope_extensions = {
    n = {
       ["<leader>fr"] = {
@@ -102,7 +113,7 @@ M.Lspsaga = {
 
 M.Undo = {
    n = {
-      ["<leader>u"] = { "<cmd> :UndotreeToggle<CR>", "undotree" },
+      ["<leader>uu"] = { "<cmd> :UndotreeToggle<CR>", "undotree" },
    },
 }
 
