@@ -44,7 +44,7 @@ local opts = {
 
          -- prefix for parameter hints
          -- default: "<-"
-         parameter_hints_prefix = "<- ",
+         parameter_hints_prefix = "👈 ",
 
          -- prefix for all the other hints (type, chaining)
          -- default: "=>"

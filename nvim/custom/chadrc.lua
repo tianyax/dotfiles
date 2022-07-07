@@ -1,3 +1,5 @@
+require("custom.neovide")
+
 local plugins = require "custom.plugins"
 
 local M = {}
@@ -9,6 +11,10 @@ M.ui = {
    theme = "doomchad",
    italic_comments = true,
    transparency = true,
+
+   statusline = {
+       separator_style = "default", -- default/round/slant/block/arrow
+    },
 }
 
 vim.cmd [[highlight IndentBlanklineIndent1 guifg=#f08080 gui=nocombine]]
@@ -24,10 +30,10 @@ M.plugins = {
    user = plugins,
    remove = { "feline-nvim/feline.nvim" },
    options = {
-      statusline = {
-         separator_style = "arrow", -- default/round/slant/block/arrow
-      },
-   },
+       lspconfig = {
+          setup_lspconf = "custom.plugins.lspconfig", -- path of lspconfig file
+       },
+    },
    override = {
       ["nvim-treesitter/nvim-treesitter"] = {
          ensure_installed = {
@@ -80,6 +86,7 @@ M.options = {
       vim.opt.smartindent = true
       vim.opt.tabstop = 4
       vim.opt.mouse = "v"
+      vim.opt.number = false
    end,
 }
 

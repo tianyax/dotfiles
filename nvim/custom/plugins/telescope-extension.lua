@@ -28,7 +28,7 @@ M.setup = function()
    require("telescope").load_extension "ui-select"
    -- To get fzf loaded and working with telescope, you need to call
    --require("telescope").load_extension "fzf"
-   require("telescope").load_extension "refactoring"
+   --require("telescope").load_extension "refactoring"
 end
 
 return M

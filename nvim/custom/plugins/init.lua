@@ -85,6 +85,7 @@ return {
 
    -- lsp UI
    ["tami5/lspsaga.nvim"] = {
+      after = "nvim-lspconfig",
       config = function()
          require "custom.plugins.lspsaga"
       end,
@@ -130,11 +131,13 @@ return {
       end,
    },
 
+   --[[
    ["petertriho/nvim-scrollbar"] = {
       config = function()
          require "custom.plugins.scrollbar"
       end,
    },
+   --]]
 
    -- github issue
    ["pwntester/octo.nvim"] = {
@@ -174,6 +177,7 @@ return {
 
    -- pop-up menu
    ["weilbith/nvim-code-action-menu"] = {
+      after = "nvim-lspconfig",
       cmd = "CodeActionMenu",
    },
 
@@ -223,6 +227,8 @@ return {
    },
 
    -- theme
+   ['Iron-E/nvim-highlite'] = {},
+   --[[
    ["catppuccin/nvim"] = {
       as = "catppuccin",
 
@@ -230,6 +236,7 @@ return {
          require "custom.plugins.catppuccin"
       end,
    },
+   --]]
    --["sainnhe/edge"] = {},
    --["glepnir/zephyr-nvim"] = {},
 

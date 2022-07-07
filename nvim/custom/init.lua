@@ -2,15 +2,6 @@
 -- This is an example init file in /lua/custom/
 -- this init.lua can load stuffs etc too so treat it like your ~/.config/nvim/
 
-local lsp = require "lspconfig"
-
-lsp.rust_analyzer.setup {}
-lsp.pyright.setup {}
-lsp.diagnosticls.setup {}
-lsp.golangci_lint_ls.setup {}
-lsp.gopls.setup {}
-lsp.sourcery.setup {}
-
 require("leap").set_default_keymaps()
 
 -- Run gofumpt + goimport on save
