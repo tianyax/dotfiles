@@ -5,8 +5,8 @@
 require("leap").set_default_keymaps()
 
 -- Run gofumpt + goimport on save
-vim.api.nvim_exec([[ autocmd ColorScheme * lua require('leap').init_highlight(true) ]], false)
 vim.api.nvim_exec([[ autocmd BufWritePre *.go :silent! lua require('go.format').goimport() ]], false)
+vim.api.nvim_exec([[ autocmd ColorScheme * lua require('leap').init_highlight(true) ]], false)
 --vim.api.nvim_exec([[ autocmd BufWritePre *.rs lua vim.lsp.buf.formatting_sync(nil, 200) ]], false)
 local autocmd = vim.api.nvim_create_autocmd
 
@@ -16,3 +16,13 @@ autocmd({ "BufWritePre", "BufWritePost" }, {
       vim.lsp.buf.formatting_sync(nil, 200)
    end,
 })
+
+-- override nvchad default config
+vim.opt.shiftwidth = 4
+vim.opt.smartindent = true
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+vim.opt.mouse = "v"
+vim.opt.number = false
+vim.opt.numberwidth = 1
+

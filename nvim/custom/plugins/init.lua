@@ -76,6 +76,10 @@ return {
       end,
    },
 
+   ["Canop/nvim-bacon"] = {                                                                                                                                   
+      after = "nvim-lspconfig",
+   },
+
    ["ray-x/go.nvim"] = {
       after = "nvim-lspconfig",
       config = function()

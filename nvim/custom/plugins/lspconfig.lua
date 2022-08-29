@@ -14,7 +14,7 @@ M.setup_lsp = function()
    lsp.gopls.setup {}
    --lsp.diagnosticls.setup {}
    lsp.pyright.setup {}
-   lsp.sourcery.setup {}
+   --lsp.sourcery.setup {}
 
    if not configs.golangcilsp then
        configs.golangcilsp = {

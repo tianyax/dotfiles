@@ -80,14 +80,4 @@ M.signature = {
    doc_lines = 5,
 }
 
-M.options = {
-   user = function()
-      vim.opt.shiftwidth = 4
-      vim.opt.smartindent = true
-      vim.opt.tabstop = 4
-      vim.opt.mouse = "v"
-      vim.opt.number = false
-   end,
-}
-
 return M
