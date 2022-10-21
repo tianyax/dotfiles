@@ -1,11 +1,31 @@
 return {
-   ["wakatime/vim-wakatime"] = {},
+   -- override
+   ["nvim-treesitter/nvim-treesitter"] = {
+      override_options = {
+         ensure_installed = { "rust", "go", "python" },
+      },
+   },
 
-   -- Notification window
-   ["rcarriga/nvim-notify"] = {
+   ["wakatime/vim-wakatime"] = {},
+   -- remove
+   ["NvChad/nvterm"] = { disable = true },
+   ["feline-nvim/feline.nvim"] = { disable = true },
+
+   ["folke/noice.nvim"] = {
+      event = "VimEnter",
       config = function()
-         require("custom.plugins.notify").setup()
+         require("noice").setup {
+            messages = { enabled = false },
+            lsp_progress = { enabled = true },
+         }
+         require("notify").setup {
+            background_colour = "#1a1b26",
+         }
       end,
+      requires = {
+         "MunifTanjim/nui.nvim",
+         "rcarriga/nvim-notify",
+      },
    },
    -- statusline
    -- Replace the default feline.nvim
@@ -76,7 +96,7 @@ return {
       end,
    },
 
-   ["Canop/nvim-bacon"] = {                                                                                                                                   
+   ["Canop/nvim-bacon"] = {
       after = "nvim-lspconfig",
    },
 
@@ -88,7 +108,7 @@ return {
    },
 
    -- lsp UI
-   ["tami5/lspsaga.nvim"] = {
+   ["glepnir/lspsaga.nvim"] = {
       after = "nvim-lspconfig",
       config = function()
          require "custom.plugins.lspsaga"
@@ -231,7 +251,7 @@ return {
    },
 
    -- theme
-   ['Iron-E/nvim-highlite'] = {},
+   ["Iron-E/nvim-highlite"] = {},
    --[[
    ["catppuccin/nvim"] = {
       as = "catppuccin",
@@ -245,11 +265,16 @@ return {
    --["glepnir/zephyr-nvim"] = {},
 
    -- float terminal
-   --["akinsho/toggleterm.nvim"] = {},
+   ["akinsho/toggleterm.nvim"] = {
+      tag = "*",
+      config = function()
+         require "custom.plugins.toggleterm"
+      end,
+   },
 
-   --["neoclide/coc.nvim"] = {
-   --    branch = 'release',
-   --},
+   ["neoclide/coc.nvim"] = {
+      branch = "release",
+   },
 
    --[[
    ["lukas-reineke/lsp-format.nvim"] = {

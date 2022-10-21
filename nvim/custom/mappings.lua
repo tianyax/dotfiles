@@ -1,13 +1,8 @@
 local M = {}
 
-M.nvterm = {
+M.float = {
    n = {
-      ["<leader>i"] = {
-         function()
-            require("nvterm.terminal").toggle "float"
-         end,
-         "   new floating term",
-      },
+      ["<leader>i"] = { "<cmd>ToggleTerm <CR>", "   new floating term" },
    },
 }
 
@@ -101,6 +96,10 @@ M.Lspsaga = {
       ["gk"] = {
          "<cmd>Lspsaga hover_doc<cr>",
          " lspsaga hover doc",
+      },
+      ["gl"] = {
+         "<cmd>LSoutlineToggle<cr>",
+         " show out line toggle in left",
       },
       ["<C-u>"] = {
          "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1, '<c-u>')<cr>",

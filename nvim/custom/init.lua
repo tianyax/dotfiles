@@ -13,7 +13,7 @@ local autocmd = vim.api.nvim_create_autocmd
 autocmd({ "BufWritePre", "BufWritePost" }, {
    pattern = { "*.rs", "*.python", "*.lua", "*.v" },
    callback = function()
-      vim.lsp.buf.formatting_sync(nil, 200)
+      vim.lsp.buf.format(nil, 200)
    end,
 })
 

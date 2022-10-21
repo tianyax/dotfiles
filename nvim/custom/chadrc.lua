@@ -1,4 +1,4 @@
-require("custom.neovide")
+require "custom.neovide"
 
 local plugins = require "custom.plugins"
 
@@ -13,8 +13,8 @@ M.ui = {
    transparency = true,
 
    statusline = {
-       separator_style = "default", -- default/round/slant/block/arrow
-    },
+      separator_style = "default", -- default/round/slant/block/arrow
+   },
 }
 
 vim.cmd [[highlight IndentBlanklineIndent1 guifg=#f08080 gui=nocombine]]
@@ -28,20 +28,12 @@ vim.cmd [[highlight IndentBlanklineIndent6 guifg=#C678DD gui=nocombine]]
 M.plugins = {
    --install = plugins,
    user = plugins,
-   remove = { "feline-nvim/feline.nvim" },
    options = {
-       lspconfig = {
-          setup_lspconf = "custom.plugins.lspconfig", -- path of lspconfig file
-       },
-    },
-   override = {
-      ["nvim-treesitter/nvim-treesitter"] = {
-         ensure_installed = {
-            "rust",
-            "go",
-            "python",
-         },
+      lspconfig = {
+         setup_lspconf = "custom.plugins.lspconfig", -- path of lspconfig file
       },
+   },
+   override = {
       ["lukas-reineke/indent-blankline.nvim"] = {
          show_first_indent_level = true,
          space_char_blankline = " ",
@@ -54,6 +46,7 @@ M.plugins = {
             "IndentBlanklineIndent6",
          },
       },
+      --[[
       ["NvChad/nvterm"] = {
          terminals = {
             type_opts = {
@@ -73,6 +66,7 @@ M.plugins = {
          doc_lines = 5,
          max_width = 99,
       },
+      --]]
    },
 }
 
