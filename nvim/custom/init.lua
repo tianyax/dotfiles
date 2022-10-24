@@ -4,6 +4,13 @@
 
 require("leap").set_default_keymaps()
 
+vim.cmd [[highlight IndentBlanklineIndent1 guifg=#f08080 gui=nocombine]]
+vim.cmd [[highlight IndentBlanklineIndent2 guifg=#ffb366 gui=nocombine]]
+vim.cmd [[highlight IndentBlanklineIndent3 guifg=#98C379 gui=nocombine]]
+vim.cmd [[highlight IndentBlanklineIndent4 guifg=#00ced1 gui=nocombine]]
+vim.cmd [[highlight IndentBlanklineIndent5 guifg=#61AFEF gui=nocombine]]
+vim.cmd [[highlight IndentBlanklineIndent6 guifg=#C678DD gui=nocombine]]
+
 -- Run gofumpt + goimport on save
 vim.api.nvim_exec([[ autocmd BufWritePre *.go :silent! lua require('go.format').goimport() ]], false)
 vim.api.nvim_exec([[ autocmd ColorScheme * lua require('leap').init_highlight(true) ]], false)
@@ -25,4 +32,3 @@ vim.opt.softtabstop = 4
 vim.opt.mouse = "v"
 vim.opt.number = false
 vim.opt.numberwidth = 1
-

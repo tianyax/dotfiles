@@ -5,12 +5,39 @@ return {
          ensure_installed = { "rust", "go", "python" },
       },
    },
+   ["lukas-reineke/indent-blankline.nvim"] = {
+      override_options = {
+         show_first_indent_level = true,
+         space_char_blankline = " ",
+         char_highlight_list = {
+            "IndentBlanklineIndent1",
+            "IndentBlanklineIndent2",
+            "IndentBlanklineIndent3",
+            "IndentBlanklineIndent4",
+            "IndentBlanklineIndent5",
+            "IndentBlanklineIndent6",
+         },
+      },
+   },
+   ["neovim/nvim-lspconfig"] = {
+      config = function()
+         require "plugins.configs.lspconfig"
+         require "custom.plugins.lspconfigs"
+      end,
+   },
 
-   ["wakatime/vim-wakatime"] = {},
    -- remove
    ["NvChad/nvterm"] = { disable = true },
    ["feline-nvim/feline.nvim"] = { disable = true },
 
+   ["wakatime/vim-wakatime"] = {},
+
+   ["https://git.sr.ht/~whynothugo/lsp_lines.nvim"] = {
+      config = function()
+         require("lsp_lines").setup()
+      end,
+   },
+   -- Notification window
    ["folke/noice.nvim"] = {
       event = "VimEnter",
       config = function()
