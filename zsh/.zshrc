@@ -88,7 +88,7 @@ zi light z-shell/z-a-bin-gem-node
 zi light z-shell/F-Sy-H
 zi light-mode for z-shell/z-a-meta-plugins
 zi ice depth=1; zi light romkatv/powerlevel10k
-zi light denysdovhan/spaceship-prompt
+#zi light denysdovhan/spaceship-prompt
 zi light zsh-users/zsh-autosuggestions
 zi light Aloxaf/fzf-tab
 zi pack for dircolors-material    

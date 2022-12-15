@@ -32,3 +32,4 @@ vim.opt.softtabstop = 4
 vim.opt.mouse = "v"
 vim.opt.number = false
 vim.opt.numberwidth = 1
+vim.opt.lazyredraw = true

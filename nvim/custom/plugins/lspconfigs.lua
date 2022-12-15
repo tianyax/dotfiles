@@ -7,29 +7,31 @@ M.setup_lsp = function()
       return
    end
 
-   local configs = require 'lspconfig/configs'
+   local configs = require "lspconfig/configs"
 
    lsp.rust_analyzer.setup {}
    --lsp.golangci_lint_ls.setup {}
-   lsp.gopls.setup {}
+   lsp.gopls.setup {
+      gofumpt = true,
+   }
    --lsp.diagnosticls.setup {}
    lsp.pyright.setup {}
    --lsp.sourcery.setup {}
 
    if not configs.golangcilsp then
-       configs.golangcilsp = {
-           default_config = {
-               cmd = { 'golangci-lint-langserver' },
-               root_dir = lsp.util.root_pattern('.git', 'go.mod'),
-               init_options = {
-                   command = { "golangci-lint", "run", "--out-format", "json" };
-               }
-           };
-       }
+      configs.golangcilsp = {
+         default_config = {
+            cmd = { "golangci-lint-langserver" },
+            root_dir = lsp.util.root_pattern(".git", "go.mod"),
+            init_options = {
+               command = { "golangci-lint", "run", "--out-format", "json" },
+            },
+         },
+      }
    end
 
    lsp.golangci_lint_ls.setup {
-       filetypes = { 'go', 'gomod' }
+      filetypes = { "go", "gomod" },
    }
 end
 

@@ -1,11 +1,37 @@
-theme = "bogster"
+#theme = "penumbra+"
+theme = "onedark"
+#theme = "base16_transparent"
 
 [editor]
 auto-completion = true
 true-color = true
+cursorline = true
+cursorcolumn = true
+auto-info = false
+color-modes = true
+bufferline = "multiple"
+gutters = ["diagnostics", "spacer", "diff"]
+
+[editor.statusline]
+#left = ["file-name"]
+center = []
+right = ["diagnostics", "file-type"]
+separator = "❄"
 
 [editor.lsp]
 display-messages = true
 
 [editor.file-picker]
 hidden = false
+ignore = false
+git-ignore = false
+git-global = false
+git-exclude = false
+
+[editor.indent-guides]
+render = true
+character = "╎" # Some characters that work well: "▏", "┆", "┊", "⸽"
+#skip-levels = 1
+
+[keys.normal.g]
+h = "goto_reference"

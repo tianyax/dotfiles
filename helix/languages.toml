@@ -13,10 +13,12 @@ name = "go"
 scope = "source.go"
 injection-regex = "go"
 file-types = ["go"]
-roots = ["Gopkg.toml", "go.mod"]
+roots = ["go.mod"]
+max-line-length = 120
 
-#language-server = { command = "gopls" }
-language-server = { command = "golangci-lint-langserver" }
+#language-server = { command = "golangci-lint" }
+#language-server = { command = "golangci-lint",  args=["run", "--out-format", "json"]}
+#formatter = { command = "gofumpt" }
 # TODO: gopls needs utf-8 offsets?
 indent = { tab-width = 4, unit = "\t" }
 
