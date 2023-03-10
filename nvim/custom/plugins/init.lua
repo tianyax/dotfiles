@@ -21,8 +21,8 @@ return {
    },
    ["neovim/nvim-lspconfig"] = {
       config = function()
-         require "plugins.configs.lspconfig"
-         require "custom.plugins.lspconfigs"
+         -- require "plugins.configs.lspconfig"
+         require("custom.plugins.lspconfigs").setup_lsp()
       end,
    },
 
@@ -32,27 +32,33 @@ return {
 
    ["wakatime/vim-wakatime"] = {},
 
+   --[[
    ["https://git.sr.ht/~whynothugo/lsp_lines.nvim"] = {
       config = function()
          require("lsp_lines").setup()
       end,
    },
+   --]]
+   ["anuvyklack/windows.nvim"] = {
+      requires = {
+         "anuvyklack/middleclass",
+         "anuvyklack/animation.nvim",
+      },
+      config = function()
+         vim.o.equalalways = false
+         require("windows").setup()
+      end,
+   },
    -- Notification window
    ["folke/noice.nvim"] = {
+      requires = { "MunifTanjim/nui.nvim" },
       event = "VimEnter",
       config = function()
          require("noice").setup {
             messages = { enabled = false },
             lsp_progress = { enabled = true },
          }
-         require("notify").setup {
-            background_colour = "#1a1b26",
-         }
       end,
-      requires = {
-         "MunifTanjim/nui.nvim",
-         "rcarriga/nvim-notify",
-      },
    },
    -- statusline
    -- Replace the default feline.nvim
@@ -78,11 +84,13 @@ return {
    },
    --]]
 
+   --[[
    ["andweeb/presence.nvim"] = {
       config = function()
          require "custom.plugins.presence"
       end,
    },
+   --]]
 
    -- jump tools
    ["ggandor/leap.nvim"] = {
@@ -97,15 +105,13 @@ return {
    },
 
    -- Code lint and format.
-   --[[
-  ["jose-elias-alvarez/null-ls.nvim"] = {
-    after = "nvim-lspconfig",
-    requires = { "nvim-lua/plenary.nvim" },
-    config = function()
-      require("custom.plugins.null-ls").setup()
-    end,
-  },
-  --]]
+   ["jose-elias-alvarez/null-ls.nvim"] = {
+      after = "nvim-lspconfig",
+      requires = { "nvim-lua/plenary.nvim" },
+      config = function()
+         require("custom.plugins.null-ls").setup()
+      end,
+   },
 
    -- rust tools
    ["saecki/crates.nvim"] = {
@@ -127,24 +133,29 @@ return {
       after = "nvim-lspconfig",
    },
 
+   --[[
    ["ray-x/go.nvim"] = {
       after = "nvim-lspconfig",
       config = function()
          require "custom.plugins.go"
       end,
    },
+   --]]
 
    -- lsp UI
    ["glepnir/lspsaga.nvim"] = {
-      after = "nvim-lspconfig",
+      event = "BufRead",
+      requires = { "nvim-tree/nvim-web-devicons" },
       config = function()
          require "custom.plugins.lspsaga"
       end,
    },
 
+   --[[
    ["ray-x/guihua.lua"] = {
       run = "cd lua/fzy && make",
    },
+   --]]
 
    -- treesitter extension
    ["nvim-treesitter/nvim-treesitter-context"] = {
@@ -175,6 +186,7 @@ return {
    --]]
 
    -- Smooth scrolling
+   --[[
    ["karb94/neoscroll.nvim"] = {
       opt = true,
       config = function()
@@ -182,7 +194,6 @@ return {
       end,
    },
 
-   --[[
    ["petertriho/nvim-scrollbar"] = {
       config = function()
          require "custom.plugins.scrollbar"
@@ -191,6 +202,7 @@ return {
    --]]
 
    -- github issue
+   --[[
    ["pwntester/octo.nvim"] = {
       after = {
          "plenary.nvim",
@@ -201,7 +213,9 @@ return {
          require "custom.plugins.octo"
       end,
    },
+    --]]
 
+   --[[
    -- git
    ["jiaoshijie/undotree"] = {},
 
@@ -211,6 +225,7 @@ return {
          require("custom.plugins.fm-nvim").setup()
       end,
    },
+   --]]
 
    -- code refactoring
    ["ThePrimeagen/refactoring.nvim"] = {
@@ -299,9 +314,11 @@ return {
       end,
    },
 
+   --[[
    ["neoclide/coc.nvim"] = {
       branch = "release",
    },
+   --]]
 
    --[[
    ["lukas-reineke/lsp-format.nvim"] = {

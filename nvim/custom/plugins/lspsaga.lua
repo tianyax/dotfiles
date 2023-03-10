@@ -1,8 +1,10 @@
 local lspsaga = require "lspsaga"
 
-lspsaga.init_lsp_saga { -- defaults ...
-   -- "single" | "double" | "rounded" | "bold" | "plus"
-   border_style = "single",
+lspsaga.setup { -- defaults ...
+   ui = {
+      -- single,double,rounded,solid,shadow.
+      border = 'single',
+   },
    --the range of 0 for fully opaque window (disabled) to 100 for fully
    --transparent background. Values between 0-30 are typically most useful.
    saga_winblend = 0,
@@ -73,7 +75,7 @@ lspsaga.init_lsp_saga { -- defaults ...
    symbol_in_winbar = {
       in_custom = false,
       enable = true,
-      separator = " ",
+      --separator = " ",
       show_file = true,
       -- define how to customize filename, eg: %:., %
       -- if not set, use default value `%:t`
