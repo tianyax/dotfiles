@@ -52,6 +52,11 @@ disabled = true
 [shell]
 disabled = false
 
+[git_commit]
+#format = '[\($tag\)]($style) '
+tag_symbol = '🔖 '
+tag_disabled = false
+
 [battery]
 disabled = true
 full_symbol = "🔋"

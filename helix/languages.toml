@@ -13,8 +13,9 @@ name = "go"
 scope = "source.go"
 injection-regex = "go"
 file-types = ["go"]
-roots = ["go.mod"]
-max-line-length = 120
+roots = ["go.mod", "go.work"]
+max-line-length = 99
+config = { "formatting.gofumpt" = true }
 
 #language-server = { command = "golangci-lint" }
 #language-server = { command = "golangci-lint",  args=["run", "--out-format", "json"]}
@@ -29,7 +30,9 @@ injection-regex = "python"
 file-types = ["py"]
 roots = []
 
-language-server = { command = "pyright" }
+language-server = { command = "ruff-lsp" }
+config = { settings = { args = [] } }
+# language-server = { command = "pyright" }
 # TODO: pyls needs utf-8 offsets
 indent = { tab-width = 2, unit = "  " }
 
