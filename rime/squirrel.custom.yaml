@@ -1,0 +1,31 @@
+patch:
+  style/color_scheme: tianya
+  style/translucency: true
+  preset_color_schemes/tianya:
+    name: "tianya"
+    author: "tianya"
+    alpha: 0.90 # 透明度
+    horizontal: true # 水平排列
+    border_height: 0 # 候选字边框
+    border_width: 0
+    candidate_format: "%c %@ "
+    corner_radius: 5 # 候选框圆角半径
+    font_face: "FuraCode Nerd Font"
+    font_point: 18
+    inline_preedit: true # 单行显示
+    label_font_face: "STHeitiSC-Light"
+    label_font_point: 12
+    text_color: 0x42422
+    display_tray_icon: true
+
+    color_space: display_p3
+    back_color: 0xFFFFFF # 候选字背景颜色
+    border_color: 0xECE4FC # 边框颜色
+    candidate_text_color: #0x121212 # 预选项文字颜色
+    comment_text_color: 0x8E8E8E # 拼音等提示文字颜色
+    hilited_candidate_back_color: 0xECE4FC # 候选文字背景色
+    hilited_candidate_label_color: 0xB18FF4 # 候选编号颜色
+    hilited_candidate_text_color: 0x4763FF # 0x7A40EC # 候选文字颜色(注意颜色编码)
+      #hilited_candidate_back_color: 0xFFF0E4
+      #hilited_candidate_text_color: 0xEE6E00
+
