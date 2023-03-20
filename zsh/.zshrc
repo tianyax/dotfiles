@@ -1,9 +1,9 @@
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+#if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+#  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+#fi
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -18,6 +18,7 @@ autoload -Uz compinit
 compinit
 
 alias vi='nvim'
+alias nv='neovide --multigrid'
 alias ls='lsd'
 alias lt='ls --tree'
 alias ll='ls -l'
@@ -38,10 +39,12 @@ alias zj='zellij'
 #alias ping='prettyping'
 export BAT_THEME="TwoDark"
 export EDITOR=/usr/local/bin/nvim
+export PATH="$HOME/.local/bin:$PATH"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -f ~/.forgit/forgit.plugin.zsh ] && source ~/.forgit/forgit.plugin.zsh
 eval "$(starship init zsh)"
+eval "$(navi widget zsh)"
 export FZF_DEFAULT_OPTS="--height 50% --info inline --border --preview 'bat --style=numbers --color=always --line-range :5000 {}'"
 export FZF_CTRL_T_COMMAND='fd --type f'
 #export FORGIT_FZF_DEFAULT_OPTS="--exact --border --cycle --reverse --height '80%'"
@@ -50,7 +53,6 @@ export FORGIT_ADD_FZF_OPTS="--exact --border --cycle --reverse --height '80%'"
 #source <(curl -sSL git.io/forgit)
 
 # eval foncifg
-eval "$(pyenv init -)"
 eval "$(zoxide init zsh --cmd c)"
 
 # mcfly config
@@ -65,7 +67,9 @@ eval "$(zoxide init zsh --cmd c)"
 
 # atuin config                                                                                                                                                      
 #atuin import zsh  -- import zsh history         
-eval "$(atuin init zsh)"                                                                                                                                           
+export ATUIN_NOBIND="true"
+#eval "$(atuin init zsh)"
+bindkey '^r' _atuin_search_widget
 
 # ture color support
 [[ $TMUX = "" ]] && export TERM="xterm-256color"
@@ -81,14 +85,15 @@ autoload -Uz _zi
 # (this is currently required for annexes)
 
 #zi light wfxr/forgit
+zi light ellie/atuin
 zi light z-shell/z-a-readurl
 zi light z-shell/z-a-rust
 zi light z-shell/z-a-patch-dl
 zi light z-shell/z-a-bin-gem-node
 zi light z-shell/F-Sy-H
 zi light-mode for z-shell/z-a-meta-plugins
-zi ice depth=1; zi light romkatv/powerlevel10k
-#zi light denysdovhan/spaceship-prompt
+#zi ice depth=1; zi light romkatv/powerlevel10k
+#zi light spaceship-prompt/spaceship-prompt
 zi light zsh-users/zsh-autosuggestions
 zi light Aloxaf/fzf-tab
 zi pack for dircolors-material    
@@ -133,12 +138,19 @@ zstyle ':fzf-tab:*' switch-group ',' '.'
 zstyle ':fzf-tab:complete:*:*' extra-opts --preview=$extract";$PREVIEW \$in"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-(( ! ${+functions[p10k]} )) || p10k finalize
+#[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+#(( ! ${+functions[p10k]} )) || p10k finalize
 
-source <(kubectl completion zsh)
+#source <(kubectl completion zsh)
 
 source ~/.config/broot/launcher/bash/br
 
 # Created by `pipx` on 2022-06-14 11:56:48
 export PATH="$PATH:$HOME/.local/bin"
+
+# Codon compiler path (added by install script)
+export PATH=$HOME/.codon/bin:$PATH
+
+# Wasmer
+export WASMER_DIR="$HOME/.wasmer"
+[ -s "$WASMER_DIR/wasmer.sh" ] && source "$WASMER_DIR/wasmer.sh"
