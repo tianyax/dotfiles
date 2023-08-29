@@ -1,119 +1,129 @@
 local M = {}
 
+M.disabled = {
+  n = {
+    ["<Esc>"] = "",
+  },
+}
+
 M.float = {
-   n = {
-      ["<leader>i"] = { "<cmd>ToggleTerm <CR>", "   new floating term" },
-   },
+  n = {
+    ["<leader>i"] = { "<cmd>ToggleTerm <CR>", "   new floating term" },
+  },
 }
 
 M.telescope_extensions = {
-   n = {
-      ["<leader>fr"] = {
-         "<cmd> :Telescope file_browser <CR>",
-         "Open file browser",
-      },
-      ["<leader>rr"] = {
-         "<cmd> :Ranger <CR>",
-         "ranger",
-      },
-      ["<leader>fn"] = {
-         "<cmd> :lua require('telescope').extensions.notify.notify()<CR>",
-         "neovim notify",
-      },
-      ["<leader>rf"] = {
-         "<cmd> :lua require('telescope').extensions.refactoring.refactors()<CR>",
-         "refactors code",
-      },
-      ["<leader>cd"] = {
-         "<cmd> :lua require('telescope').extensions.zoxide.list{}<CR>",
-         "zoxide list",
-      },
-   },
+  n = {
+    ["<leader>fr"] = {
+      "<cmd> :Telescope file_browser <CR>",
+      "Open file browser",
+    },
+    ["<leader>rr"] = {
+      "<cmd> :Ranger <CR>",
+      "ranger",
+    },
+    ["<leader>fn"] = {
+      "<cmd> :lua require('telescope').extensions.notify.notify()<CR>",
+      "neovim notify",
+    },
+    ["<leader>cd"] = {
+      "<cmd> :lua require('telescope').extensions.zoxide.list{}<CR>",
+      "zoxide list",
+    },
+  },
 }
 
 M.Lsp = {
-   n = {
-      ["<leader>fd"] = {
-         function()
-            vim.diagnostic.open_float()
-         end,
-         "  floating diagnostic",
-      },
-      ["<leader>d"] = {
-         function()
-            vim.lsp.buf.type_definition()
-         end,
-         "   lsp definition type",
-      },
-      ["<leader>ls"] = {
-         function()
-            vim.lsp.buf.signature_help()
-         end,
-         " lsp signature_help",
-      },
-   },
+  n = {
+    ["<leader>fd"] = {
+      function()
+        vim.diagnostic.open_float()
+      end,
+      "  floating diagnostic",
+    },
+    ["<leader>d"] = {
+      function()
+        vim.lsp.buf.type_definition()
+      end,
+      "   lsp definition type",
+    },
+    ["<leader>ls"] = {
+      function()
+        vim.lsp.buf.signature_help()
+      end,
+      " lsp signature_help",
+    },
+  },
 }
 
 M.ZenMode = {
-   n = {
-      ["<leader>z"] = { "<cmd> :ZenMode <CR>", "zen mode" },
-   },
+  n = {
+    ["<leader>z"] = { "<cmd> :ZenMode <CR>", "zen mode" },
+  },
 }
 
 M.Hop = {
-   n = {
-      ["<leader>s"] = { "<cmd> :HopPattern <CR>", "hop search" },
-      ["<leader>ll"] = { "<cmd> :HopLine <CR>", "hop search line" },
-   },
+  n = {
+    ["<leader>s"] = { "<cmd> :HopPattern <CR>", "hop search" },
+    ["<leader>ll"] = { "<cmd> :HopLine <CR>", "hop search line" },
+  },
 }
 
 -- gitsigns
 M.gitsigns = {
-   n = {
-      ["<leader>gh"] = { "<cmd>Gitsigns preview_hunk <CR>", "git preview hunk" },
-      ["<leader>gd"] = { "<cmd>Gitsigns diffthis <CR>", "git diff" },
-      ["<leader>gb"] = { "<cmd>Gitsigns blame_line <CR>", "git blame" },
-      ["<leader>gs"] = { "<cmd>Gitsigns stage_hunk <CR>", "git state hunk" },
-      ["<leader>gus"] = { "<cmd>Gitsigns undo_stage_hunk <CR>", "git undo state hunk" },
-   },
+  n = {
+    ["<leader>gh"] = { "<cmd>Gitsigns preview_hunk <CR>", "git preview hunk" },
+    ["<leader>gd"] = { "<cmd>Gitsigns diffthis <CR>", "git diff" },
+    ["<leader>gb"] = { "<cmd>Gitsigns blame_line <CR>", "git blame" },
+    ["<leader>gs"] = { "<cmd>Gitsigns stage_hunk <CR>", "git state hunk" },
+    ["<leader>gus"] = { "<cmd>Gitsigns undo_stage_hunk <CR>", "git undo state hunk" },
+  },
 }
 
 --- In lsp attach function
 M.Lspsaga = {
-   n = {
-      ["gx"] = {
-         "<cmd>Lspsaga code_action<cr>",
-         " lspsaga code action",
-      },
-      ["go"] = {
-         "<cmd>Lspsaga show_line_diagnostics<cr>",
-         " lspsaga show line diagnostics",
-      },
-      ["gh"] = {
-         "<cmd>Lspsaga lsp_finder<cr>",
-         " lspsaga show definition",
-      },
-      ["gk"] = {
-         "<cmd>Lspsaga hover_doc<cr>",
-         " lspsaga hover doc",
-      },
-      ["gl"] = {
-         "<cmd>LSoutlineToggle<cr>",
-         " show out line toggle in left",
-      },
-      ["<C-u>"] = {
-         "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1, '<c-u>')<cr>",
-      },
-      ["<C-d"] = {
-         "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1, '<c-d>')<cr>",
-      },
-   },
+  n = {
+    ["gx"] = {
+      "<cmd>Lspsaga code_action<cr>",
+      " lspsaga code action",
+    },
+    ["go"] = {
+      "<cmd>Lspsaga show_line_diagnostics<cr>",
+      " lspsaga show line diagnostics",
+    },
+    ["gp"] = {
+      "<cmd>Lspsaga peek_definition<CR>",
+      " lspsaga peek definition",
+    },
+    ["gr"] = {
+      "<cmd>Lspsaga finder<cr>",
+      " lspsaga show definition",
+    },
+    ["gd"] = {
+      "<cmd>Lspsaga goto_definition<CR>",
+      " lspsaga go to definition",
+    },
+    ["gk"] = {
+      "<cmd>Lspsaga hover_doc<cr>",
+      " lspsaga hover doc",
+    },
+    ["gl"] = {
+      "<cmd>Lspsaga outline<cr>",
+      " show out line toggle in left",
+    },
+    ["<C-u>"] = {
+      "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1, '<c-u>')<cr>",
+    },
+    ["<C-d"] = {
+      "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1, '<c-d>')<cr>",
+    },
+  },
 }
 
 M.Undo = {
-   n = {
-      ["<leader>uu"] = { "<cmd> :UndotreeToggle<CR>", "undotree" },
-   },
+  n = {
+    ["<leader>uu"] = { "<cmd> :UndotreeToggle<CR>", "undotree" },
+  },
 }
 
 return M

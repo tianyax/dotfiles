@@ -3,7 +3,7 @@ local lspsaga = require "lspsaga"
 lspsaga.setup { -- defaults ...
    ui = {
       -- single,double,rounded,solid,shadow.
-      border = 'single',
+      border = "single",
    },
    --the range of 0 for fully opaque window (disabled) to 100 for fully
    --transparent background. Values between 0-30 are typically most useful.
@@ -83,26 +83,17 @@ lspsaga.setup { -- defaults ...
       -- ## only valid after set `show_file = true`
       file_formatter = "",
       click_support = false,
+      color_mode = true,
    },
-   -- show outline
-   show_outline = {
+   outline = {
       win_position = "right",
-      --set special filetype win that outline window split.like NvimTree neotree
-      -- defx, db_ui
-      win_with = "",
-      win_width = 30,
+      win_width = 10,
       auto_enter = true,
       auto_preview = true,
-      virt_text = "┃",
+      virt_text = "",
       jump_key = "o",
-      -- auto refresh when change buffer
       auto_refresh = true,
    },
-   -- custom lsp kind
-   -- usage { Field = 'color code'} or {Field = {your icon, your color code}}
    custom_kind = {},
-   -- if you don't use nvim-lspconfig you must pass your server name and
-   -- the related filetypes into this table
-   -- like server_filetype_map = { metals = { "sbt", "scala" } }
    server_filetype_map = {},
 }
