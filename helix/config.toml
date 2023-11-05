@@ -1,25 +1,45 @@
 #theme = "penumbra+"
-theme = "onedark"
-#theme = "base16_transparent"
+#theme = "onedark"
+theme = "base16_transparent"
 
 [editor]
+line-number = "absolute"
 auto-completion = true
-true-color = true
+true-color = false
+undercurl = false
 cursorline = true
 cursorcolumn = true
-auto-info = false
+auto-info = true
 color-modes = true
+text-width = 99
 bufferline = "multiple"
 gutters = ["diagnostics", "spacer", "diff"]
 
 [editor.statusline]
-#left = ["file-name"]
-center = []
-right = ["diagnostics", "file-type"]
-separator = "❄"
+left = ["mode", "spinner", "separator", "file-name"]
+center = ["separator", "version-control"]
+#right = ["diagnostics", "separator", "file-type", "separator", "position"]
+right = [
+  "diagnostics",
+  "separator",
+  "selections",
+  #"separator",
+  #"position",
+  #"position-percentage",
+  #"spacer",
+  "separator",
+  "file-type",
+]
+#separator = "❄"
+separator = "🔥"
+#separator = "¦"
 
 [editor.lsp]
 display-messages = true
+display-inlay-hints = true
+
+[editor.soft-wrap]
+enable = true
 
 [editor.file-picker]
 hidden = false
@@ -29,9 +49,13 @@ git-global = false
 git-exclude = false
 
 [editor.indent-guides]
-render = true
-character = "╎" # Some characters that work well: "▏", "┆", "┊", "⸽"
+render = false
+#character = "╎" # Some characters that work well: "▏", "┆", "┊", "⸽"
 #skip-levels = 1
 
-[keys.normal.g]
-h = "goto_reference"
+[keys.normal]
+tab = "goto_next_buffer"
+space = { x = ":buffer-close" }
+C-w = { x = ":buffer-close" }
+#[keys.normal.g]
+#h = "goto_reference"
