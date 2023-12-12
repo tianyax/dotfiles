@@ -16,6 +16,7 @@ $hg_branch\
 $golang\
 $python\
 $rust\
+$zig\
 $memory_usage\
 $status\
 $line_break\
@@ -27,7 +28,9 @@ $character"""
 #success_symbol = "✨"
 #success_symbol = "🔥"
 #success_symbol = "🌟"
-success_symbol = "☁ "
+#success_symbol = "☁ "
+#success_symbol = "📚"
+success_symbol = "🏄"
 error_symbol = "💥"
 # success_symbol = "[➜](bold green) "
 # style = "bold blue"
@@ -53,7 +56,7 @@ detect_files = ["go.mod", "go.work"]
 format = "via [$symbol($version )]($style)"
 version_format = "v${raw}"
 symbol = "↯ "
-style = "bold yellow"
+style = "yellow"
 disabled = false
 detect_extensions = ["zig"]
 detect_files = ["build.zig"]
