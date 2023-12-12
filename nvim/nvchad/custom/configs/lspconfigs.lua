@@ -16,6 +16,7 @@ M.setup_lsp = function()
       root_dir = root_dir,
       settings = {
          gopls = {
+            -- local = "go-common",
             gofumpt = true,
             codelenses = {
                upgrade_dependency = true,
@@ -32,6 +33,15 @@ M.setup_lsp = function()
                -- unusedvariable = true,
                -- nilness = true,
             },
+            hints = {
+               assignVariableTypes = true,
+               compositeLiteralFields = true,
+               compositeLiteralTypes = true,
+               constantValues = true,
+               functionTypeParameters = true,
+               parameterNames = true,
+               rangeVariableTypes = true,
+            },
             staticcheck = false,
             hoverKind = "NoDocumentation", -- SynopsisDocumentation
          },
@@ -39,7 +49,14 @@ M.setup_lsp = function()
    }
 
    lsp.ruff_lsp.setup {}
-   lsp.rust_analyzer.setup {}
+   lsp.rust_analyzer.setup {
+      inlayHint = {
+         dynamicRegistration = true,
+         resolveSupport = {
+            properties = {},
+         },
+      },
+   }
    --lsp.pyright.setup {}
    lsp.vls.setup {}
    --lsp.golangci_lint_ls.setup {}

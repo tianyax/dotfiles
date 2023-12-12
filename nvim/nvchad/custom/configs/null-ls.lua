@@ -8,20 +8,23 @@ local sources = {
    --b.formatting.gofumpt.with {
    --   extra_args = { "-extra" },
    --},
+   --b.formatting.goimports.with {
+   --extra_args = { "-local=luffy" },
+   --},
    b.formatting.gofmt.with {
       extra_args = { "-extra" },
    },
    --b.formatting.golines.with {
    --   extra_args = { "--max-len=120" },
    --},
-   b.formatting.goimports,
    b.formatting.ruff,
+   --b.formatting.goimports_reviser,
    b.formatting.stylua,
    b.formatting.rustfmt,
    b.formatting.taplo,
    b.formatting.zigfmt,
 
-   --b.diagnostics.golangci_lint,
+   b.diagnostics.golangci_lint,
    --b.diagnostics.revive,
    b.diagnostics.ruff,
    b.diagnostics.ltrs,

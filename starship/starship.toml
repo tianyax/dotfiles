@@ -2,7 +2,8 @@ add_newline = false
 #"$schema" = 'https://starship.rs/config-schema.json'
 scan_timeout = 10
 #format = """$character"""
-right_format = """$package$directory"""
+#right_format = """$package$directory"""
+right_format = """$time"""
 format = """
 $username\
 $kubernetes\
@@ -23,8 +24,10 @@ $character"""
 [character]
 # symbol = "💥 "
 # symbol = "💧 "
-# success_symbol = "✨"
-success_symbol = "🔥"
+#success_symbol = "✨"
+#success_symbol = "🔥"
+#success_symbol = "🌟"
+success_symbol = "☁ "
 error_symbol = "💥"
 # success_symbol = "[➜](bold green) "
 # style = "bold blue"
@@ -38,13 +41,23 @@ symbol = "💭 "
 
 [python]
 symbol = "👾 "
-python_binary = "python3"
+python_binary = "python"
 detect_extensions = ['py']
 detect_files = ["pyproject.toml"]
 
 [golang]
 format = "via [🏎💨 $version](bold cyan) "
 detect_files = ["go.mod", "go.work"]
+
+[zig]
+format = "via [$symbol($version )]($style)"
+version_format = "v${raw}"
+symbol = "↯ "
+style = "bold yellow"
+disabled = false
+detect_extensions = ["zig"]
+detect_files = ["build.zig"]
+detect_folders = []
 
 [nodejs]
 disabled = true
@@ -56,6 +69,14 @@ disabled = false
 #format = '[\($tag\)]($style) '
 tag_symbol = '🔖 '
 tag_disabled = false
+
+[time]
+disabled = false
+format = '[\[ $time \]]($style) '
+style = 'bold green'
+#time_format = '%T'
+time_format = '%R'
+#utc_time_offset = '8'
 
 [battery]
 disabled = true

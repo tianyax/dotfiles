@@ -24,10 +24,8 @@ local opts = {
       on_initialized = nil,
       -- These apply to the default RustSetInlayHints command
       inlay_hints = {
-
          -- Only show inlay hints for the current line
          only_current_line = false,
-
          -- Event which triggers a refersh of the inlay hints.
          -- You can make this "CursorMoved" or "CursorMoved,CursorMovedI" but
          -- not that this may cause higher CPU usage.
@@ -41,7 +39,7 @@ local opts = {
 
          -- whether to show variable name before type hints with the inlay hints or not
          -- default: false
-         show_variable_name = false,
+         show_variable_name = true,
 
          -- prefix for parameter hints
          -- default: "<-"
@@ -53,13 +51,13 @@ local opts = {
          other_hints_prefix = "🦀 ",
 
          -- whether to align to the lenght of the longest line in the file
-         max_len_align = false,
+         max_len_align = true,
 
          -- padding from the left if max_len_align is true
          max_len_align_padding = 1,
 
          -- whether to align to the extreme right or not
-         right_align = false,
+         right_align = true,
 
          -- padding from the right if right_align is true
          right_align_padding = 7,

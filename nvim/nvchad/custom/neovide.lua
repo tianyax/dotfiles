@@ -1,3 +1,5 @@
+vim.g.gruvbox_material_better_performance = 1
+
 if vim.g.neovide then
    local g = vim.g
 
@@ -5,7 +7,7 @@ if vim.g.neovide then
    g.neovide_transparency = 0.75
    g.neovide_floating_blur_amount_x = 2.0
    g.neovide_floating_blur_amount_x = 2.0
-   -- g.neovide_fullscreen = true
+   g.neovide_fullscreen = true
    -- g.neovide_cursor_vfx_mode = "railgun"
    g.neovide_cursor_vfx_particle_phase = 1.5
    g.neovide_cursor_vfx_particle_curl = 1.0
@@ -25,7 +27,7 @@ if vim.g.neovide then
    g.neovide_cursor_unfocused_outline_width = 0.1
 
    vim.opt.linespace = 1
-   vim.o.guifont = "FiraCode Nerd Font:h18.5"
+   vim.o.guifont = "FiraCode Nerd Font,Noto_Color_Emoji:h18.5"
    vim.o.winblend = 20
    vim.o.textwidth = 120
    --vim.o.winwidth = 120

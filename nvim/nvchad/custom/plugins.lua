@@ -28,7 +28,13 @@ local plugins = {
          require("custom.configs.lspconfigs").setup_lsp()
       end,
    },
-
+   {
+      "Exafunction/codeium.vim",
+      --event = "InsertEnter",
+   },
+   {
+      "sainnhe/gruvbox-material",
+   },
    -- remove
    --{"NvChad/nvterm", disable = true },
    --{"feline-nvim/feline.nvim", disable = true },
@@ -128,7 +134,7 @@ local plugins = {
 
    -- Code lint and format.
    {
-      "jose-elias-alvarez/null-ls.nvim",
+      "nvimtools/none-ls.nvim",
       event = "VeryLazy",
       dependencies = {
          "nvim-lspconfig",
