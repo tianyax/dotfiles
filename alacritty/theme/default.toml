@@ -1,0 +1,93 @@
+[colors]
+transparent_background_colors = true
+
+[[colors.indexed_colors]]
+color = "#282c34"
+index = 16
+
+[[colors.indexed_colors]]
+color = "#3e4452"
+index = 17
+
+[[colors.indexed_colors]]
+color = "#4b5263"
+index = 59
+
+[[colors.indexed_colors]]
+color = "#636d83"
+index = 60
+
+[[colors.indexed_colors]]
+color = "#528bff"
+index = 69
+
+[[colors.indexed_colors]]
+color = "#57b7c2"
+index = 73
+
+[[colors.indexed_colors]]
+color = "#61afef"
+index = 75
+
+[[colors.indexed_colors]]
+color = "#80a0ff"
+index = 81
+
+[[colors.indexed_colors]]
+color = "#828997"
+index = 102
+
+[[colors.indexed_colors]]
+color = "#98c379"
+index = 114
+
+[[colors.indexed_colors]]
+color = "#be5046"
+index = 130
+
+[[colors.indexed_colors]]
+color = "#abb2bf"
+index = 145
+
+[[colors.indexed_colors]]
+color = "#e06c75"
+index = 168
+
+[[colors.indexed_colors]]
+color = "#d19a66"
+index = 173
+
+[[colors.indexed_colors]]
+color = "#c678dd"
+index = 176
+
+[[colors.indexed_colors]]
+color = "#e5c07b"
+index = 180
+
+[[colors.indexed_colors]]
+color = "#181a1f"
+index = 233
+
+[colors.bright]
+black = "0xff262b"
+blue = "0x7dc6bf"
+cyan = "0x35434d"
+green = "0xc3e88d"
+magenta = "0x6c71c4"
+red = "0xeb606b"
+white = "0xffffff"
+yellow = "0xf7eb95"
+
+[colors.normal]
+black = "0x666666"
+blue = "0x80cbc4"
+cyan = "0xaeddff"
+green = "0xc3e88d"
+magenta = "0xff2f90"
+red = "0xeb606b"
+white = "0xffffff"
+yellow = "0xf7eb95"
+
+[colors.primary]
+background = "0x1e282d"
