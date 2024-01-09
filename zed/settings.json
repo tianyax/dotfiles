@@ -1,0 +1,78 @@
+{
+  "file_scan_exclusions": [".git", ".idea", ".DS_Store", ".vscode", "benchmark", "docs", "hack"],
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
+  "features": {
+    "copilot": true
+  },
+  "active_pane_magnification": 1.0,
+  "theme": "Rosé Pine Dawn",
+  "buffer_font_family": "FuraCode Nerd Font", //"Zed Mono",
+  "buffer_font_features": {
+    "calt": true,
+    "zero": true
+  },
+  "buffer_font_size": 18,
+  "default_dock_anchor": "right",
+  "hover_popover_enabled": true,
+  "preferred_line_length": 99,
+  "vim_mode": true,
+  "format_on_save": "on",
+  "alternate_scroll": "off",
+  // "git_gutter": "hide",
+  "inlay_hints": {
+    "enabled": true,
+    "show_type_hints": true,
+    "show_parameter_hints": true,
+    "show_other_hints": true
+  },
+  "experimental_themes": true,
+  "show_completions_on_input": true,
+  "lsp": {
+    "rust-analyzer": {
+      "initialization_options": {
+        "inlayHints": {
+          "maxLength": 99
+        },
+        "lifetimeElisionHints": {
+          "useParameterNames": true,
+          "enable": "skip_trivial"
+        },
+        "closureReturnTypeHints": {
+          "enable": "always"
+        },
+        "checkOnSave": {
+          "command": "clippy" // rust-analyzer.checkOnSave.command
+        }
+      }
+    },
+    "gopls": {
+      "initialization_options": {
+        "hints": {
+          "assignVariableTypes": true,
+          "compositeLiteralFields": true,
+          "compositeLiteralTypes": true,
+          "constantValues": true,
+          "functionTypeParameters": true,
+          "parameterNames": true,
+          "rangeVariableTypes": true
+        }
+      }
+    }
+  },
+  "terminal": {
+    "copy_on_select": true
+  },
+  "language_overrides": {
+    "Python": {
+      "formatter": {
+        "external": {
+          "command": "ruff",
+          "arguments": []
+        }
+      }
+    }
+  }
+}
