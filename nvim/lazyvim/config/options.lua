@@ -29,12 +29,16 @@ g.loaded_netrwPlugin = 1
 --vim.cmd [[highlight IndentBlanklineIndent5 guifg=#61AFEF gui=nocombine]]
 --vim.cmd [[highlight IndentBlanklineIndent6 guifg=#C678DD gui=nocombine]]
 
-if vim.g.neovide then
+if g.neovide then
 	g.neovide_refresh_rate = 150
 	g.neovide_transparency = 0.75
 	g.neovide_floating_blur_amount_x = 2.0
 	g.neovide_floating_blur_amount_x = 2.0
 	g.neovide_fullscreen = true
+	g.neovide_floating_shadow = true
+	g.neovide_floating_z_height = 10
+	g.neovide_light_angle_degrees = 45
+	g.neovide_light_radius = 5
 	-- g.neovide_cursor_vfx_mode = "railgun"
 	g.neovide_cursor_vfx_particle_phase = 1.5
 	g.neovide_cursor_vfx_particle_curl = 1.0
@@ -52,9 +56,10 @@ if vim.g.neovide then
 	g.neovide_cursor_animate_in_insert_mode = true
 	g.neovide_cursor_animate_command_line = true
 	g.neovide_cursor_unfocused_outline_width = 0.1
+	g.neovide_theme = "gruvbox_material"
 
 	vim.opt.linespace = 1
-	vim.o.guifont = "FiraCode Nerd Font,Noto_Color_Emoji:h18.5"
+	vim.o.guifont = "FiraCode Nerd Font Mono:h18.5"
 	vim.o.winblend = 20
 	vim.o.textwidth = 120
 	--vim.o.winwidth = 120

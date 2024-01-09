@@ -47,7 +47,9 @@ return {
 			formatters_by_ft = {
 				lua = { "stylua" },
 				--go = { "gofumpt", "goimports" },
+				--go = { "gofumpt" },
 				go = { "goformat" },
+				rust = { "rustfmt" },
 			},
 			formatters = {
 				goformat = {
@@ -62,6 +64,7 @@ return {
 						"$FILENAME",
 					},
 					stdin = false,
+					inherit = false,
 				},
 			},
 			log_level = vim.log.levels.ERROR,
@@ -69,6 +72,7 @@ return {
 		},
 	},
 
+	--[[
 	{
 		"saecki/crates.nvim",
 		event = { "BufRead Cargo.toml" },
@@ -89,6 +93,7 @@ return {
 		end,
 		dependencies = { "nvim-lspconfig" },
 	},
+    --]]
 
 	{ "Canop/nvim-bacon", ft = { "rust" }, dependencies = { "nvim-lspconfig" } },
 

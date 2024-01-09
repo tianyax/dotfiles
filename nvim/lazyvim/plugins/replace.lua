@@ -56,7 +56,7 @@ return {
 	{ "echasnovski/mini.comment", enabled = false },
 	{ "echasnovski/mini.ai", enabled = false },
 	{ "catppuccin/nvim", enabled = false },
-	{ "hrsh7th/cmp_luasnip", enabled = false },
+	{ "saadparwaiz1/cmp_luasnip", enabled = false },
 	{ "stevearc/dressing.nvim", enabled = false },
 	{ "nvim-ts-context-commentstring", enabled = false },
 	{ "echasnovski/mini.surround", enabled = false },
