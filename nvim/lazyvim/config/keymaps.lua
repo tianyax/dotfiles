@@ -22,7 +22,7 @@ map("n", "<leader>d", "<cmd>bdelete<cr>", { desc = "Delete Buffer" })
 
 -- zenmode keymaps
 -- map("n", "<leader>z", "<cmd>ZenMode<cr>", { desc = "🧘 Zen Mode" })
-map("n", "<tab>", "<cmd>e #<cr>", { desc = "Switch to Other Buffer" })
+map("n", "<tab>", "<cmd>bn<cr>", { desc = "Switch to Other Buffer" })
 
 -- gitsigns keymaps
 map("n", "<leader>gh", "<cmd>Gitsigns preview_hunk<cr>", { desc = "git preview hunk" })

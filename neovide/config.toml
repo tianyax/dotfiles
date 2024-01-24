@@ -1,0 +1,15 @@
+wsl = false
+no-multigrid = false
+vsync = true
+maximized = false
+srgb = false
+idle = true
+neovim-bin = "/usr/local/bin/nvim" # in reality found dynamically on $PATH if unset
+frame = "full"
+
+[font]
+normal = ["FiraCode Nerd Font Mono", "Normal"]
+size = 18.5
+width = 1.1
+allow_float_size = true
+hinting = "none"

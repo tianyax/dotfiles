@@ -48,8 +48,9 @@ return {
 				lua = { "stylua" },
 				--go = { "gofumpt", "goimports" },
 				--go = { "gofumpt" },
-				go = { "goformat" },
+				go = { "goimports", "goformat" },
 				rust = { "rustfmt" },
+				python = { "ruff_format" },
 			},
 			formatters = {
 				goformat = {
@@ -59,7 +60,6 @@ return {
 						"go-common,git.bilibili.co",
 						"-imports-order",
 						"std,project,company,general",
-						"-rm-unused",
 						"-format",
 						"$FILENAME",
 					},
