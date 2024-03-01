@@ -1,14 +1,6 @@
 -- Code lint and format tools.
 --
 return {
-	{
-		"neovim/nvim-lspconfig",
-		ft = { "rust", "go", "python", "zig" },
-		config = function()
-			require("plugins.configs.lspconfigs").setup()
-		end,
-	},
-
 	--[[
 	{
 		"Exafunction/codeium.nvim",
@@ -80,18 +72,6 @@ return {
 		config = function(_, opts)
 			require("crates").setup(opts)
 		end,
-	},
-
-	{
-		"simrat39/rust-tools.nvim",
-		ft = { "rust" },
-		opts = function()
-			return require("plugins.configs.rust-tools")
-		end,
-		config = function(_, opts)
-			require("rust-tools").setup(opts)
-		end,
-		dependencies = { "nvim-lspconfig" },
 	},
     --]]
 

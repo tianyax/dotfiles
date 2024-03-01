@@ -62,5 +62,6 @@ return {
 	{ "echasnovski/mini.surround", enabled = false },
 	{ "folke/tokyonight.nvim", enabled = false },
 	{ "nvim-neo-tree/neo-tree.nvim", enabled = false },
+	{ "simrat39/rust-tools.nvim", enable = false },
 	-- { "hrsh7th/nvim-cmp", enabled = false },
 }
