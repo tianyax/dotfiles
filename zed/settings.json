@@ -1,5 +1,10 @@
 {
-  "file_scan_exclusions": [".git", ".idea", ".DS_Store", ".vscode", "benchmark", "docs", "hack"],
+  "file_scan_exclusions": [
+    ".git",
+    ".idea",
+    ".DS_Store",
+    ".vscode",
+  ],
   "telemetry": {
     "diagnostics": false,
     "metrics": false
@@ -9,7 +14,9 @@
   },
   "active_pane_magnification": 1.0,
   "theme": "Rosé Pine Dawn",
-  "buffer_font_family": "FuraCode Nerd Font", //"Zed Mono",
+  "ui_font_family": "FiraCode Nerd Font Mono",
+  "ui_font_size": 16,
+  "buffer_font_family": "FiraCode Nerd Font Mono", //"Zed Mono",
   "buffer_font_features": {
     "calt": true,
     "zero": true
@@ -34,17 +41,49 @@
     "rust-analyzer": {
       "initialization_options": {
         "inlayHints": {
-          "maxLength": 99
+          "maxLength": 50,
+          "closingBraceHints": {
+            "enable": false
+          },
+          "parameterHints": {
+            "enable": false
+          },
+          "typeHints": {
+            "enable": false
+          },
+          "chainingHints": {
+            "enable": false
+          },
+          "lifetimeElisionHints": {
+            "useParameterNames": true,
+            "enable": "skip_trivial"
+          },
+          "closureCaptureHints": {
+            "enable": true
+          },
+          "closureReturnTypeHints": {
+            "enable": "with_block"
+          },
+          "rangeExclusiveHints": {
+            "enable": true
+          }
         },
-        "lifetimeElisionHints": {
-          "useParameterNames": true,
-          "enable": "skip_trivial"
+        "imports": {
+          "preferPrelude": true
         },
-        "closureReturnTypeHints": {
-          "enable": "always"
+        "procMacro": {
+          "enable": true,
+          "attributes": {
+            "enable": true
+          }
         },
-        "checkOnSave": {
-          "command": "clippy" // rust-analyzer.checkOnSave.command
+        "diagnostics": {
+          "experimental": {
+            "enable": true
+          }
+        },
+        "check": {
+          "command": "clippy"
         }
       }
     },
