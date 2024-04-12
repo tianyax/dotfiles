@@ -1,21 +1,21 @@
+[gitbutler]
+	aiModelProvider = openai
 [credential]
 	helper = store
-[user]
-	email = 
-	name = 
 [core]
 	excludesfile = $HOME/.gitignore_global
 	pager = delta
 [interactive]
     diffFilter = delta --color-only
 [delta]
+	dark = true
+	true-color = always
 	features = side-by-side line-numbers decorations
 	whitespace-error-style = 22 reverse
 	#side-by-side = false
-	plus-color = "#012800"
-	minus-color = "#340001"
-	plus-style = "syntax #012800"
-	syntax-theme = Dracula
+	minus-style = "syntax auto"
+	plus-style = "syntax auto"
+	syntax-theme = TwoDark
 	#minus-style = red bold ul "#ffeeee"
 	line-numbers = false
 	navigate = true
@@ -39,3 +39,11 @@
     conflictstyle = diff3
 [diff]
     colorMoved = default
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+[filter "xet"]
+	process = git xet filter
+	required = true
