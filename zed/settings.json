@@ -5,6 +5,16 @@
     ".DS_Store",
     ".vscode",
   ],
+  "git": {
+    "git_gutter": "tracked_files",
+    "inline_blame": { "enabled": true }
+  },
+  "scrollbar": {
+    "show": "never"
+  },
+  "tab_bar": {
+    "show_nav_history_buttons": true
+  }
   "telemetry": {
     "diagnostics": false,
     "metrics": false
@@ -28,7 +38,6 @@
   "vim_mode": true,
   "format_on_save": "on",
   "alternate_scroll": "off",
-  // "git_gutter": "hide",
   "inlay_hints": {
     "enabled": true,
     "show_type_hints": true,
@@ -39,9 +48,12 @@
   "show_completions_on_input": true,
   "lsp": {
     "rust-analyzer": {
+	  "binary": {
+        "path": "/Users/x/.cargo/bin/rust-analyzer"
+      },
       "initialization_options": {
         "inlayHints": {
-          "maxLength": 50,
+          "maxLength": 99,
           "closingBraceHints": {
             "enable": false
           },
@@ -82,12 +94,15 @@
             "enable": true
           }
         },
-        "check": {
+        "checkOnSave": {
           "command": "clippy"
         }
       }
     },
     "gopls": {
+	  "binary": {
+        "path": "/Users/x/.gobin/gopls"
+      },
       "initialization_options": {
         "hints": {
           "assignVariableTypes": true,

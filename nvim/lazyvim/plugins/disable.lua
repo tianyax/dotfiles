@@ -12,7 +12,7 @@ return {
 			"nvim-lua/plenary.nvim",
 		},
 		config = function()
-			require("plugins.configs.null-ls").setup()
+			require("plugins.configs.none-ls").setup()
 		end,
 		enabled = false,
 	},

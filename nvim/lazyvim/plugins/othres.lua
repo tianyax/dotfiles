@@ -53,16 +53,16 @@ return {
 	},
 
 	-- jump effects
-	{
-		"edluffy/specs.nvim",
-		event = "WinScrolled",
-		opts = function()
-			return require("plugins.configs.specs")
-		end,
-		config = function(_, opts)
-			require("specs").setup(opts)
-		end,
-	},
+	--{
+	--	"edluffy/specs.nvim",
+	--	event = "WinScrolled",
+	--	opts = function()
+	--		return require("plugins.configs.specs")
+	--	end,
+	--	config = function(_, opts)
+	--		require("specs").setup(opts)
+	--	end,
+	--},
 
 	-- Zen mode
 	{

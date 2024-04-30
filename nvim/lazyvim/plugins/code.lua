@@ -14,13 +14,25 @@ return {
 		opts = {},
 	},
 	--]]
-	--
+	{
+		"sourcegraph/sg.nvim",
+		event = "InsertEnter",
+		enabled = false,
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"nvim-telescope/telescope.nvim",
+		},
+		config = function(_, opts)
+			require("sg").setup(opts)
+		end,
+	},
 	{
 		"codota/tabnine-nvim",
 		build = "./dl_binaries.sh",
 		event = "InsertEnter",
+		enabled = false,
 		opts = {
-			disable_auto_comment = false,
+			disable_auto_comment = true,
 			accept_keymap = "<Tab>",
 			dismiss_keymap = "<C-]>",
 			debounce_ms = 800,
@@ -38,8 +50,7 @@ return {
 		opts = {
 			formatters_by_ft = {
 				lua = { "stylua" },
-				--go = { "gofumpt", "goimports" },
-				--go = { "gofumpt" },
+				-- go = { "gofumpt", "goimports" },
 				go = { "goimports", "goformat" },
 				rust = { "rustfmt" },
 				python = { "ruff_format" },
@@ -64,7 +75,6 @@ return {
 		},
 	},
 
-	--[[
 	{
 		"saecki/crates.nvim",
 		event = { "BufRead Cargo.toml" },
@@ -73,7 +83,6 @@ return {
 			require("crates").setup(opts)
 		end,
 	},
-    --]]
 
 	{ "Canop/nvim-bacon", ft = { "rust" }, dependencies = { "nvim-lspconfig" } },
 

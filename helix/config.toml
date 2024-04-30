@@ -1,11 +1,13 @@
 #theme = "penumbra+"
 #theme = "onedark"
 theme = "base16_transparent"
+#theme = "Bogster"
+#theme = "everforest_dark"
 
 [editor]
 line-number = "absolute"
 auto-completion = true
-true-color = false
+true-color = true
 undercurl = false
 cursorline = true
 cursorcolumn = true
@@ -13,7 +15,8 @@ auto-info = true
 color-modes = true
 text-width = 99
 bufferline = "multiple"
-gutters = ["diagnostics", "spacer", "diff"]
+#gutters = ["line-numbers", "diagnostics", "spacer", "diff"]
+gutters = ["diff", "diagnostics", "line-numbers", "spacer"]
 
 [editor.statusline]
 left = ["mode", "spinner", "separator", "file-name"]
@@ -57,5 +60,7 @@ render = false
 tab = "goto_next_buffer"
 space = { x = ":buffer-close" }
 C-w = { x = ":buffer-close" }
+#C-f = [":new", ":insert-output lf-pick", "select_all", "split_selection_on_newline", "goto_file", "goto_last_modified_file", ":buffer-close!"]
+
 #[keys.normal.g]
 #h = "goto_reference"

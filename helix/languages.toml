@@ -52,7 +52,7 @@ command = [
   "--issues-exit-code=1",
 ]
 
-[language-server.rust-analyzer]
+[language-server.zls]
 command = "zls"
 
 [language-server.zls.config]
