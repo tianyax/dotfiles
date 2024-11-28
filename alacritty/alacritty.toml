@@ -1,9 +1,11 @@
+[general]
 import = [
-	"~/.config/alacritty/theme/gruvbox_material.toml", 
+	"~/.config/alacritty/theme/everforest_dark.toml", 
 ]
 live_config_reload = true
 
 [colors]
+transparent_background_colors = true
 draw_bold_text_with_bright_colors = false
 
 [env]
@@ -18,11 +20,13 @@ y = 0
 
 [font.normal]
 family = "FiraCode Nerd Font Mono"
+#family = "GeistMono Nerd Font Mono"
+#style = "Regular"
 style = "Light"
 
 [font.offset]
 x = 1
-y = 5
+y = 4
 
 [scrolling]
 history = 100000
@@ -33,10 +37,12 @@ save_to_clipboard = true
 semantic_escape_chars = ",│`|:\"' ()[]{}<>"
 
 [window]
+dynamic_padding = true
 decorations = "buttonless"
 decorations_theme_variant = "Dark"
-opacity = 0.9
+opacity = 1
 option_as_alt = "OnlyLeft"
+blur = true
 
 [window.dimensions]
 columns = 120
