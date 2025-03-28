@@ -1,16 +1,5 @@
 return {
-	{
-		"nvim-treesitter/nvim-treesitter",
-		opts = {
-			ensure_installed = {
-				"lua",
-				"python",
-				"rust",
-				"go",
-			},
-		},
-	},
-
+	--[[
 	{
 		"nvim-tree/nvim-tree.lua",
 		cmd = { "NvimTreeToggle", "NvimTreeFocus" },
@@ -34,6 +23,7 @@ return {
 			},
 		},
 	},
+	--]]
 	-- theme
 	{ "rose-pine/neovim" },
 
@@ -69,7 +59,7 @@ return {
 		"folke/zen-mode.nvim",
 		opts = {
 			window = {
-				width = 0.60,
+				width = 0.70,
 			},
 		},
 		keys = {

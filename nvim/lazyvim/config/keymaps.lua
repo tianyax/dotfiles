@@ -14,7 +14,7 @@ map("n", "gk", "<cmd>Lspsaga hover_doc<cr>", { desc = "lspsaga hover doc" })
 map("n", "gl", "<cmd>Lspsaga outline<cr>", { desc = "show out line toggle in left" })
 
 map("n", "<leader>fd", function()
-   vim.diagnostic.open_float()
+	vim.diagnostic.open_float()
 end, { desc = "floating diagnostic" })
 
 -- buffer
