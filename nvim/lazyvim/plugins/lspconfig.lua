@@ -4,7 +4,11 @@ return {
 		ft = { "rust", "go", "python", "zig" },
 		opts = {
 			servers = {
+				bacon_ls = {
+					enabled = true, --diagnostics == "bacon-ls",
+				},
 				rust_analyzer = {
+					enabled = false,
 					keys = {
 						{ "K", "<cmd>RustHoverActions<cr>", desc = "Hover Actions (Rust)" },
 						{ "<leader>cR", "<cmd>RustCodeAction<cr>", desc = "Code Action (Rust)" },
@@ -36,9 +40,7 @@ return {
 								},
 							},
 							diagnostics = {
-								experimental = {
-									enable = true,
-								},
+								enable = true,
 							},
 							import = {
 								preferPrelude = true,
