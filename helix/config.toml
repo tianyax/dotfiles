@@ -1,7 +1,8 @@
 #theme = "penumbra+"
 #theme = "onedark"
-theme = "base16_transparent"
-#theme = "Bogster"
+#theme = "base16_transparent"
+theme = "Bogster"
+#theme = "kaolin-valley-dark"
 #theme = "everforest_dark"
 
 [editor]

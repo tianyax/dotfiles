@@ -1,3 +1,7 @@
+[[language]]
+name = "rust"
+language-servers = ["rust-analyzer", "bacon-ls"]
+
 [language-server.rust-analyzer.config]
 inlayHints.bindingModeHints.enable = true
 inlayHints.chainingHints.enable = true
@@ -15,6 +19,12 @@ inlayHints.expressionAdjustmentHints.enable = "reborrow"
 inlayHints.parameterHints.enable = true
 inlayHints.reborrowHints.enable = "mutable"
 inlayHints.renderColons = true
+
+checkOnSave = { enable = false }
+diagnostics = { enable = false }
+
+[language-server.bacon-ls]
+command = "bacon-ls"
 
 [[language]]
 name = "go"
@@ -37,7 +47,7 @@ compositeLiteralFields = true
 constantValues = true
 compositeLiteralTypes = true
 functionTypeParameters = true
-parameterNames = true
+parameterNames = false
 rangeVariableTypes = true
 
 [language-server.golangci-lint-lsp]
