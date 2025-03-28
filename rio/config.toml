@@ -1,0 +1,66 @@
+ignore-selection-foreground-color = true
+use-kitty-keyboard-protocol = true
+hide-cursor-when-typing = true
+confirm-before-quit = false
+option-as-alt = 'left'
+padding-x = 0
+padding-y = [0, 0]
+window-opacity = 0.5
+theme = "gruvbox"
+
+[window]
+width = 1500
+height = 800
+mode = "Windowed"
+#mode = "Maximized"
+blur = true
+opacity = 0.8
+decorations = "Transparent"
+macos-hide-toolbar-buttons = true
+
+[renderer]
+performance = "High"
+backend = "Metal"
+target-fps = 120
+disable-unfocused-render = true
+
+[fonts]
+size = 18
+
+[fonts.regular]
+family = "FiraCode Nerd Font Mono"
+style = "Normal"
+weight = 100
+
+[fonts.bold]
+family = "FiraCode Nerd Font Mono"
+style = "Normal"
+weight = 200
+
+[fonts.italic]
+family = "FiraCode Nerd Font Mono"
+style = "Italic"
+weight = 100
+
+[fonts.bold-italic]
+family = "FiraCode Nerd Font Mono"
+style = "Italic"
+weight = 200
+
+[advanced]
+tab-character-active = '●'
+tab-character-inactive = '■'
+
+[navigation]
+mode = "Bookmark"
+#mode = "Breadcrumb"
+#color-automation = [{ program = "nvim" }]
+use-current-path = true
+clickable = true
+use-split = true
+hide-if-single = true
+#macos-hide-window-buttons = true
+
+[developer]
+enable-fps-counter = true
+log-level = 'OFF'
