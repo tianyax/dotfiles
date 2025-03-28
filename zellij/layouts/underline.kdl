@@ -3,8 +3,7 @@ layout {
         children
         pane size=2 borderless=false {
             plugin location="file:~/.config/zellij/plugins/zjstatus.wasm" {
-				format_left   "💗#[fg=#FF6A6A]ANR {mode}#[bg=#1c2428] {tabs}"
-				//format_left   "#[fg=#FF6A6A]ANR {mode}#[bg=#181926] {tabs}"
+                format_left   "#[fg=#FF6A6A]ANR {mode}#[bg=#181926] {tabs}"
                 format_center ""
                 format_space  "#[bg=#181926]"
 				format_right  "{command_git_branch} {datetime}"
@@ -12,7 +11,7 @@ layout {
                 format_precedence "crl"
 
                 border_enabled  "true"
-                border_char     "~"
+                border_char     "─"
                 border_format   "#[fg=#6C7086]{char}"
                 border_position "top"
 
