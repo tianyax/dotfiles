@@ -102,13 +102,6 @@ return {
 			}
 		end,
 	},
-	{
-		"nvim-lualine/lualine.nvim",
-		opts = function(_, opts)
-			local icon = require("lazyvim.config").icons.kinds.tabnine
-			table.insert(opts.sections.lualine_x, 2, require("lazyvim.util").lualine.cmp_source("tabnine", icon))
-		end,
-	},
 
 	{
 		"mfussenegger/nvim-lint",
@@ -122,22 +115,22 @@ return {
 	{ "lukas-reineke/indent-blankline.nvim", enabled = false },
 	{ "nvimdev/dashboard-nvim", enabled = false },
 	{ "rafamadriz/friendly-snippets", enabled = false },
-	{ "williamboman/mason-lspconfig.nvim", enabled = false },
-	{ "williamboman/mason.nvim", enabled = false },
+	{ "mason-org/mason-lspconfig.nvim", enabled = false },
+	{ "mason-org/mason.nvim", enabled = false },
 	{ "L3MON4D3/LuaSnip", enabled = false },
 	{ "folke/neoconf.nvim", enabled = false },
 	{ "windwp/nvim-ts-autotag", enabled = false },
 	{ "RRethy/vim-illuminate", enabled = false },
 	{ "folke/persistence.nvim", enabled = false },
 	{ "nvim-treesitter/nvim-treesitter-textobjects", enabled = false },
-	{ "echasnovski/mini.indentscope", enabled = false },
-	{ "echasnovski/mini.comment", enabled = false },
-	{ "echasnovski/mini.ai", enabled = false },
+	{ "nvim-mini/mini.indentscope", enabled = false },
+	{ "nvim-mini/mini.comment", enabled = false },
+	{ "nvim-mini/mini.ai", enabled = false },
 	{ "catppuccin/nvim", enabled = false },
 	{ "saadparwaiz1/cmp_luasnip", enabled = false },
 	{ "stevearc/dressing.nvim", enabled = false },
 	{ "nvim-ts-context-commentstring", enabled = false },
-	{ "echasnovski/mini.surround", enabled = false },
+	{ "nvim-mini/mini.surround", enabled = false },
 	{ "folke/tokyonight.nvim", enabled = false },
 	{ "folke/flash.nvim", enabled = true },
 	{ "nvim-neo-tree/neo-tree.nvim", enabled = false },

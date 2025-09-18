@@ -5,10 +5,10 @@ return {
 		opts = {
 			servers = {
 				bacon_ls = {
-					enabled = true, --diagnostics == "bacon-ls",
+					enabled = false, --diagnostics == "bacon-ls",
 				},
 				rust_analyzer = {
-					enabled = false,
+					enabled = true,
 					keys = {
 						{ "K", "<cmd>RustHoverActions<cr>", desc = "Hover Actions (Rust)" },
 						{ "<leader>cR", "<cmd>RustCodeAction<cr>", desc = "Code Action (Rust)" },
@@ -58,10 +58,17 @@ return {
 					},
 				},
 				golangci_lint_ls = {
-					filetypes = { "go", "gomod", "gowork" },
 					cmd = { "golangci-lint-langserver" },
+					filetypes = { "go", "gomod", "gowork" },
 					init_options = {
-						command = { "golangci-lint", "run", "--out-format", "json" },
+						command = {
+							"golangci-lint",
+							"run",
+							"--output.json.path",
+							"stdout",
+							"--show-stats=false",
+							"--issues-exit-code=1",
+						},
 					},
 				},
 				gopls = {

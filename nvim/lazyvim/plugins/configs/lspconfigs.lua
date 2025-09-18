@@ -65,8 +65,14 @@ M.setup = function()
 		cmd = { "golangci-lint-langserver" },
 		root_dir = root_dir,
 		init_options = {
-			command = { "golangci-lint", "run", "--out-format", "json" },
-			-- command = { "golangci-lint", "run" },
+			command = {
+				"golangci-lint",
+				"run",
+				"--output.json.path",
+				"stdout",
+				"--show-stats=false",
+				"--issues-exit-code=1",
+			},
 		},
 	})
 end
