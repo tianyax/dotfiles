@@ -1,0 +1,26 @@
+font-size = 17
+font-family = "FiraCode Nerd Font"
+theme = Gruvbox Dark Hard
+background-opacity = 0.8
+split-divider-color = #FF7F50
+window-padding-color = extend
+window-colorspace = display-p3
+quit-after-last-window-closed = true
+quick-terminal-position = center
+quick-terminal-size = 70%,70%
+adjust-cell-height = 2
+#adjust-underline-position = 1
+selection-background = #FA8072
+minimum-contrast = 1.1
+fullscreen = true
+#window-padding-x = 2
+window-padding-balance = true
+#macos-non-native-fullscreen = visible-menu
+macos-non-native-fullscreen = true
+macos-window-shadow = true
+macos-icon = paper
+macos-icon-frame = chrome
+
+keybind = super+shift+f=toggle_quick_terminal
+keybind = super+enter=toggle_split_zoom
+

@@ -2,20 +2,32 @@
 -- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
 -- Add any additional options here
 --
-vim.opt.shiftwidth = 4
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.smartindent = true
-vim.opt.smarttab = true
-vim.opt.mouse = "v"
-vim.opt.number = false
-vim.opt.numberwidth = 1
-vim.opt.cursorcolumn = true
-vim.opt.cursorline = true
-vim.opt.expandtab = false
-vim.opt.list = false
--- vim.opt.lazyredraw = true
-vim.opt.termguicolors = true
+
+local opt = vim.opt
+opt.relativenumber = false
+opt.listchars = {
+  tab = "→ ",
+  lead = "·",
+  trail = "•",
+  nbsp = "␣",
+}
+opt.statuscolumn = ""
+opt.timeoutlen = 100
+opt.signcolumn = "yes"
+opt.shiftwidth = 4
+opt.tabstop = 4
+opt.softtabstop = 4
+opt.smartindent = true
+opt.smarttab = true
+opt.mouse = "v"
+opt.number = false
+opt.numberwidth = 1
+opt.cursorcolumn = true
+opt.cursorline = true
+opt.expandtab = false
+opt.list = false
+-- opt.lazyredraw = true
+opt.termguicolors = true
 
 local g = vim.g
 g.lazyvim_picker = "snacks"

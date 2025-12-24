@@ -28,6 +28,12 @@ return {
 				layout = { preview = true },
 				matcher = { sort_empty = false, fuzzy = true },
 			},
+			animate = {
+				enabled = true,
+				duration = 20,
+				easing = "linear",
+				fps = 120,
+			},
 		},
 	},
 	{
@@ -133,6 +139,7 @@ return {
 	{ "nvim-mini/mini.surround", enabled = false },
 	{ "folke/tokyonight.nvim", enabled = false },
 	{ "folke/flash.nvim", enabled = true },
+	{ "folke/trouble.nvim", enabled = false },
 	{ "nvim-neo-tree/neo-tree.nvim", enabled = false },
 	-- { "hrsh7th/nvim-cmp", enabled = false },
 }

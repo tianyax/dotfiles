@@ -3,11 +3,11 @@ local lspsaga = require("lspsaga")
 lspsaga.setup({ -- defaults ...
 	ui = {
 		-- single,double,rounded,solid,shadow.
-		border = "single",
+		border = "solid",
 	},
 	--the range of 0 for fully opaque window (disabled) to 100 for fully
 	--transparent background. Values between 0-30 are typically most useful.
-	saga_winblend = 0,
+	saga_winblend = 30,
 	move_in_saga = { prev = "<C-p>", next = "<C-n>" },
 	-- Error, Warn, Info, Hint
 	-- use emoji like
@@ -23,18 +23,25 @@ lspsaga.setup({ -- defaults ...
 	-- preview lines of lsp_finder and definition preview
 	max_preview_lines = 10,
 	-- use emoji lightbulb in default
-	code_action_icon = "💡",
+	code_action_icon = "❗️",
 	-- if true can press number to execute the codeaction in codeaction window
 	code_action_num_shortcut = true,
 	-- same as nvim-lightbulb but async
+	lightbulb = {
+        enable = true,
+        sign = false,
+        virtual_text = false,
+        sign_priority = 20,
+        virtual_text_priority = 20,
+    },
 	code_action_lightbulb = {
 		enable = true,
 		enable_in_insert = true,
 		cache_code_action = true,
-		sign = true,
+		sign = false,
 		update_time = 150,
 		sign_priority = 20,
-		virtual_text = true,
+		virtual_text = false,
 	},
 	-- finder icons
 	finder_icons = {

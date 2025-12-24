@@ -1,0 +1,132 @@
+version: "2"
+
+run:
+  timeout: 30s
+  allow-parallel-runners: true
+  tests: false
+  go: '1.25'
+
+linters:
+  default: none
+  enable:
+    - asasalint
+    - asciicheck
+    - bidichk
+    - bodyclose
+    - canonicalheader
+    - containedctx
+    - contextcheck
+    - copyloopvar
+    - cyclop
+    - decorder 
+    - dupl
+    - durationcheck
+    - errcheck
+    - errchkjson
+    - exhaustive
+    - exptostd
+    - fatcontext
+    - forbidigo
+    - funlen
+    - gocheckcompilerdirectives
+    - gochecknoinits
+    - gochecksumtype
+    - gocognit
+    - goconst
+    - gocritic
+    - gocyclo
+    - godox
+    - gomoddirectives 
+    - gomodguard
+    - gosec
+    - grouper
+    - govet
+    - iface
+    - inamedparam
+    - ineffassign
+    - iotamixing
+    - intrange
+    - lll
+    - makezero
+    - maintidx
+    - mirror
+    - modernize
+    - musttag
+    - nestif
+    - nilnil
+    - nolintlint
+    - perfsprint
+    - prealloc
+    - predeclared
+    - protogetter
+    - reassign
+    - recvcheck
+    - revive
+    - rowserrcheck
+    - sloglint
+    - spancheck
+    - sqlclosecheck
+    - staticcheck
+    - tagalign
+    - tagliatelle
+    - tparallel
+    - unconvert
+    - unparam
+    - unqueryvet
+    - unused
+    - usestdlibvars
+    - wastedassign
+    - whitespace
+    - wrapcheck
+      # - gci
+      # - dupword
+      # - deadcode
+      # - depguard 
+      # - ifshort
+      # - structcheck
+      # - varcheck
+      # - paralleltest
+      # - nonamedreturns
+      # - gochecknoglobals
+      # - exhaustruct
+      # - exportloopref
+      # - containedctx
+      # - forcetypeassert
+      # - funcorder
+      # - nakedret
+      # - intrange
+
+  settings:
+    revive:
+      max-open-files: 1024
+      enable-default-rules: true
+      rules:
+        - name: var-naming
+          disabled: true
+    govet:
+      enable-all: true
+      enable:
+        - copylocks
+      # enable:
+      #   - fieldalignment
+      #   - atomicalign
+    gocyclo:
+      # Minimal code complexity to report.
+      # Default: 30
+      min-complexity: 10
+    prealloc:
+      simple: false
+      for-loops: true
+    lll:
+      line-length: 99
+    nolintlint:
+      allow-unused: true
+      require-specific: false
+
+formatters:
+  settings:
+    gofumpt:
+      module-path: ""
+      extra-rules: true
+    goimports:
+      local-prefixes: []
